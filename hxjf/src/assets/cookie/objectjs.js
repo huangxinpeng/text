@@ -1,0 +1,13 @@
+;
+$(function(){
+     setTimeout(function(){
+    bannerListFn(
+    $(".banner"),
+    $(".img-btn-list"),
+    $(".left-btn"),
+    $(".right-btn"),
+    2000,
+    true
+)
+},1000);
+})
