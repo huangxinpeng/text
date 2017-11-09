@@ -1,0 +1,101 @@
+<ion-view view-title="转让复核" hide-tabs="true">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="tab.zrangcheckhistory" style="font-size: 12px">复核历史</button>
+  </ion-nav-buttons>
+  <div class="mysubheader">
+    <span ng-class="{true:'active',flase:''}[isCur]" ng-click="showcheck()">转让待复核</span>
+    <i></i>
+    <span ng-class="{true:'',false:'active'}[isCur]" ng-click="showrevocation()">转让撤销待复核</span>
+  </div>
+
+  <ion-content scroll="false" class="zrang-check has-footer" >
+
+    <!-- 转让待复核-->
+    <ion-content ng-show="isCur">
+      <!-- 统计-->
+      <div class="zrang-total">
+        <h4>{{cjs.formMoney(trfTotal)}}</h4>
+        <p>待复核转让总额(元)</p>
+        <h6>共{{zrtrfList.total}}笔</h6>
+      </div>
+      <!-- 明细-->
+
+      <div class="baoquanzrang-list">
+
+        <div class="checkAll" ng-if="haszrtrf" >
+          <label class="checkbox">
+            <input type="checkbox" ng-click="checkAlltrf()" ng-checked="trfallCheck">
+          </label>
+          <span>请勾选您确认复核的的宝券转让</span>
+        </div>
+
+        <ul>
+          <li ng-repeat="trfitem in zrtrfList.list">
+            <label class="checkbox">
+              <input type="checkbox" ng-model="ischeckedtrf[$index]" ng-click="trfSelection($index)">
+            </label>
+            <div ng-click="jumpto('tab.zrangcheckdetail',{id:trfitem.id,no:trfitem.srcDrftNo,bt:isCur})" class="clearfloat">
+              <div class="left">
+                <div>{{trfitem.rcvCustNm}}</div>
+                <span>{{cjs.initTimer(trfitem.txnDt)}}</span>
+              </div>
+              <div class="right">
+                <div>{{cjs.formMoney(trfitem.txnAmt)}}</div>
+                <span>{{trfitem.delayDays}}天</span>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+    </ion-content>
+
+    <!-- 转让撤销待复核-->
+    <ion-content ng-hide="isCur">
+      <!-- 统计-->
+      <div class="zrang-total">
+        <h4>{{cjs.formMoney(revTotal)}}</h4>
+        <p>待复核转让总额(元)</p>
+        <h6>共{{zrrevList.total}}笔</h6>
+      </div>
+      <!-- 明细-->
+      <div class="baoquanzrang-list">
+
+        <div class="checkAll" ng-if="haszrrev">
+          <label class="checkbox">
+            <input type="checkbox" ng-click="checkAllrev()" ng-checked="revallCheck">
+          </label>
+          <span>请勾选您确认复核的宝券转让撤销</span>
+        </div>
+
+        <ul>
+          <li ng-repeat="revitem in zrrevList.list">
+            <label class="checkbox">
+              <input type="checkbox" ng-model="ischeckedrev[$index]" ng-click="revSelection($index)">
+            </label>
+            <div ng-click="jumpto('tab.zrangcheckdetail',{id:revitem.id,no:revitem.srcDrftNo,bt:isCur})" class="clearfloat">
+              <div class="left">
+                <div>{{revitem.rcvCustNm}}</div>
+                <span>{{cjs.initTimer(revitem.txnDt)}}</span>
+              </div>
+              <div class="right">
+                <div>{{cjs.formMoney(revitem.txnAmt)}}</div>
+                <span>{{revitem.delayDays}}天</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+
+  </ion-content>
+
+  <!-- 驳回&确认签收-->
+  <ion-footer-bar class="handle_button" ng-if="haszrtrf || haszrrev">
+    <span ng-click="reject()">驳回</span>
+    <span class="comfirm_ok" ng-click="zrcheck()">确认复核</span>
+  </ion-footer-bar>
+
+
+</ion-view>

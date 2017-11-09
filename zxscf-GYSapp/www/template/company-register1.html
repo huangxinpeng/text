@@ -1,0 +1,117 @@
+<ion-view view-title="企业注册" hide-tabs="true">
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button  class="back-text-hide">
+      <i class="HHS-tab-backicon"></i>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+ <ion-content class='companyregister1'>
+   <!--注册流程图-->
+   <div class='show_register'>
+     <!--图片-->
+     <ul class="show_image">
+       <li>
+         <i></i>
+         <span>企业基本信息</span>
+       </li>
+       <li>
+         <i></i>
+         <span>法人信息</span>
+        </li>
+       <li>
+         <i></i>
+         <span>管理员信息</span>
+       </li>
+     </ul>
+     <!--两条线-->
+     <div class="show_line">
+       <span></span>
+       <span></span>
+     </div>
+   </div>
+
+   <!--资料填写-->
+   <div class="company_info_one">
+     <ul class="">
+      <li class="cp_info_name">
+        <label>
+          <span>企业名称</span>
+          <input type="text" ng-model="companyInfo.custCnNm">
+        </label>
+      </li>
+      <li class=" cp_info_cardtype">
+        <span>证件类型</span>
+        <span ng-click="show()" class="right">{{chooseCardType}}<i class="icon ion-ios-arrow-right"></i></span>
+      </li>
+      <li class=" cp_info_cardnumber">
+        <label>
+          <span>证件号码</span>
+          <input type="number" placeholder="请输入证件号码" ng-model="companyInfo.idNo">
+        </label>
+      </li>
+      <li class="cp_info_city" ng-click="citys()">
+          <span>所在城市</span>
+          <span class="right">{{provcity}}<i class="icon ion-ios-arrow-right"></i></span>
+      </li>
+      <li class=" cp_info_addr">
+        <label>
+          <span>详细地址</span>
+          <input type="text" ng-model="companyInfo.regAdr">
+        </label>
+      </li>
+     </ul>
+   </div>
+
+   <!--<div class="file-down" style="padding-bottom: 0;padding-top: 2px">
+     <span on-tap="fileLoad()">下载并查看协议</span>
+     <div  ng-if="downloadProgress" class="file-down-progress">下载中...{{ downloadProgress }}</div>
+   </div>-->
+
+   <!--证件照片-->
+  <div class='text_info'>请您上传证件照片</div>
+  <div id="get_picture_card">
+    <ul>
+      <li ng-click="picture('0')">
+        <img ng-src="{{imgData.imgSrcOri}}">
+        <!--<div class="upload_picture" ng-show="isImage0">
+          <div class="shade"></div>
+          <div class="plus_picture">
+            <i class="icon ion-ios-plus"></i>
+            <div>正本照片</div>
+          </div>
+        </div>-->
+      </li>
+      <li ng-click="picture('1')">
+        <img ng-src="{{imgData.imgSrcCop}}" class="reg1_conscard">
+        <!--<div class="upload_picture" ng-show="isImage1">
+          <div class="shade"></div>
+          <div class="plus_picture">
+            <i class="icon ion-ios-plus"></i>
+            <div>副本照片</div>
+          </div>
+        </div>-->
+      </li>
+    </ul>
+  </div>
+
+   <!--<div id="get_picture_card">
+     <ul>
+       <li>
+         <img ng-src="{{fileImage.attachOriImage}}">
+         <input type="file" id="fileOri" onchange="angular.element(this).scope().fileChanged(this)" style="opacity: 0; font-size:100px;position: absolute;left: 0;top:0;">
+       </li>
+       <li>
+         <img ng-src="{{fileImage.attachCopImage}}">
+         <input type="file" id="fileCop" onchange="angular.element(this).scope().fileChanged(this)" style="opacity: 0; font-size:100px;position: absolute;left: 0;top:0;">
+       </li>
+     </ul>
+   </div>-->
+
+  <div class="nextpage" ng-click="nextAndreg()"> <!-- ui-sref="register2" -->
+    <a>下一步</a>
+  </div>
+
+ </ion-content>
+
+</ion-view>

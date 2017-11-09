@@ -1,0 +1,60 @@
+<ion-view hide-tabs="true" title="我的金币">
+
+  <ion-content class="mycoin">
+
+      <div class="total-coin">
+        <h4>累计金币总额</h4>
+        <h2>{{cjs.formMoney(mycoins.totalBonus)}}</h2>
+        <ul>
+          <li>
+            <span>可用余额</span>
+            <div>{{cjs.formMoney(mycoins.validBonus)}}</div>
+          </li>
+          <li></li>
+          <li>
+            <span>冻结余额</span>
+            <div>{{cjs.formMoney(mycoins.lockBonus)}}</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tongji">
+        <h2>收支统计</h2>
+        <ul>
+          <li ui-sref="tab.mycoin-sy">
+            <i></i><span>收益</span><i></i><span>{{cjs.formMoney(Inbonus.inBonus)}}</span>
+          </li>
+          <li ui-sref="tab.mycoin-used">
+            <i></i><span>使用</span><i></i><span>{{cjs.formMoney(Inbonus.usedBonus)}}</span>
+          </li>
+          <li ui-sref="tab.mycoin-unenter">
+            <i></i><span>未入账</span><i></i><span>{{cjs.formMoney(Inbonus.outBonus)}}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="shouyi">
+        <div class="top-btn">
+          <span ng-class="{true:'active',false:''}[isshow]" ng-click="showZR()">转让收益</span>
+          <span ng-class="{true:'',false:'active'}[isshow]" ng-click="showRZ()">融资收益</span>
+        </div>
+        <!--转让收益-->
+        <ul ng-show="isshow">
+          <li ng-repeat="zritem in zrList">
+            <div><span>转让票据</span><span><i>+{{cjs.formMoney(zritem.bonus)}}</i></span></div>
+            <div><span>{{cjs.initTimer(zritem.effectiveDt)}}</span><span>{{cjs.formMoney(zritem.txnAmt)}}</span></div>
+          </li>
+        </ul>
+        <!--融资收益-->
+        <ul ng-hide="isshow">
+          <li ng-repeat="rzitem in rzList">
+            <div><span>融资票据</span><span><i>+{{cjs.formMoney(rzitem.bonus)}}</i></span></div>
+            <div><span>{{cjs.initTimer(rzitem.effectiveDt)}}</span><span>{{cjs.formMoney(rzitem.txnAmt)}}</span></div>
+          </li>
+        </ul>
+      </div>
+
+  </ion-content>
+
+
+</ion-view>

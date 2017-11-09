@@ -1,0 +1,18 @@
+<div class="popup-fiscalcheckAgree">
+  <div class="myTitle">计财审核</div>
+  <div class="myPop">提示：如您确认受理该宝券，请进行身份验证并签署下述协议。</div>
+  <div class="yanzheng">
+    <input type="number" placeholder="短信验证" ng-model="input.MsgCode"/>
+    <a href="javascript:;" ng-click="getMsgcode()">{{getmessageinfo}}</a>
+  </div>
+  <div class="isagree">
+    <label class="checkbox">
+      <input type="checkbox" ng-model="input.isok">
+    </label>
+    <p>我已认真阅读并同意接受<a href="javascript();">《E秒付平台宝券商业保理融资协议》</a>及<a href="javascript();">《债权转让通知》</a>的全部内容。</p>
+  </div>
+  <div id="pop_btn">
+    <span ng-click="giveout()">取消</span>
+    <span ng-click="makesure()">确定</span>
+  </div>
+</div>

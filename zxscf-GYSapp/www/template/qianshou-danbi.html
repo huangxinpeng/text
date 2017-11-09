@@ -1,0 +1,41 @@
+<ion-view view-title="签收信息" hide-tabs="true">
+
+  <ion-content class="qianshou-danbi">
+
+    <div>
+      <ion-list>
+        <ion-item class="list_litem">
+          <span>转出方</span>
+          <span>{{detailList.reqCustNm}}</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>转让金额</span>
+          <span class="moneys">{{cjs.formMoney(detailList.txnAmt)}}</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>到期日</span><span>{{cjs.initTimer(detailList.srcDueDt)}}</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>距到期日</span><span>{{detailList.delayDays}}天</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>开单方</span><span>{{detailList.drwrNm}}</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>转出日期</span><span>{{cjs.initTimer(detailList.txnDt)}}</span>
+        </ion-item>
+        <ion-item class="list_litem">
+          <span>宝券编号</span><span>{{detailList.srcDrftNo}}</span>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </ion-content>
+
+  <!-- 驳回&确认签收-->
+  <div class="bar bar-footer handle_button">
+    <span ng-click="backup()">驳回</span>
+    <span class="comfirm_ok" ng-click="sign_in()">确认签收</span>
+  </div>
+
+</ion-view>

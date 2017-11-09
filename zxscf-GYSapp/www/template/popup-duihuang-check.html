@@ -1,0 +1,14 @@
+<div class="popup-bqdue">
+  <div class="title">身份验证</div>
+  <div class="info">提示:如您确认兑付该宝券,请进行身份验证.</div>
+
+  <div class="yanzheng">
+    <input type="number" placeholder="短信验证" ng-model="input.MsgCode"/>
+    <a href="javascript:;" ng-click="getMsgcode()">{{messageinfo}}</a>
+  </div>
+
+  <div class="my_btn">
+    <span ng-click="handle_cancel()">取消</span>
+    <span ng-click="handle_comfirm()">确定</span>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<ion-view title="使用明细" hide-tabs="true">
+
+  <ion-content class="use_detail">
+    <div>
+      <ul>
+          <li ng-repeat="useditem in uesedInfo">
+            <div class="use-detail-left">
+              <span>{{useditem.useScene}}</span>
+              <span>{{cjs.initTimer(useditem.useDt)}}</span>
+            </div>
+            <!--<i></i>-->
+            <div class="use-detail-right">
+              <span class="onlyone">{{cjs.formMoney(useditem.useBonus)}}</span>
+              <!--<span class="uncheck">待复核</span>-->
+            </div>
+          </li>
+      </ul>
+    </div>
+  </ion-content>
+
+</ion-view>

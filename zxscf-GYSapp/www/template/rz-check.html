@@ -1,0 +1,85 @@
+<ion-view view-title="融资复核" hide-tabs="true" hide-back-button="false">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="tab.rzcheckhistory" style="font-size: 12px">复核历史</button>
+  </ion-nav-buttons>
+  <div class="mysubheader">
+    <span ng-class="{true:'active',flase:''}[isshow]" ng-click="showcheck()">融资待复核</span>
+    <i></i>
+    <span ng-class="{true:'',false:'active'}[isshow]" ng-click="showrevocation()">融资撤销待复核</span>
+  </div>
+  <ion-content scroll="false" class="rongzi-check has-footer">
+    <!-- 融资待复核-->
+    <ion-content ng-show="isshow">
+      <!-- 统计-->
+      <div class="rongzi-total">
+        <h4>{{cjs.formMoney(disTotal)}}</h4>
+        <p>待复核转让总额(元)</p>
+        <h6>共{{rzdisList.total}}笔</h6>
+      </div>
+      <div class="baoquanrz-list">
+        <div class="checkAll" ng-if="hasrzdis">
+          <label class="checkbox">
+            <input type="checkbox" ng-click="checkAlldis()" ng-checked="disallCheck">
+          </label>
+          <span>请勾选您确认复核的的宝券融资</span>
+        </div>
+        <ul>
+          <li ng-repeat="disitem in rzdisList.list">     <!-- ng-click="godetail()" -->
+            <label class="checkbox">
+              <input type="checkbox" ng-model="ischeckeddis[$index]" ng-click="disSelection($index)">
+            </label>
+            <div class="right" ng-click="jumpto('tab.rzicheckdetail',{id:disitem.id,bt:isshow})">
+              <div class="up">
+                <span>{{disitem.srcDrftNo}}</span>
+                <span>{{cjs.formMoney(disitem.disctAmt)}}</span>
+              </div>
+              <div class="down">
+                <span>{{cjs.initTimer(disitem.txnDt)}}</span>
+                <span>实收金额<b>{{cjs.formMoney(disitem.payAmt)}}</b> </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+    <!-- 融资撤销待复核-->
+    <ion-content ng-hide="isshow">
+      <!-- 统计-->
+      <div class="rongzi-total">
+        <h4>{{cjs.formMoney(bacTotal)}}</h4>
+        <p>待复核转让总额(元)</p>
+        <h6>共{{rzbacList.total}}笔</h6>
+      </div>
+      <div class="baoquanrz-list">
+        <div class="checkAll" ng-if="hasrzdis">
+          <label class="checkbox">
+            <input type="checkbox" ng-click="checkAllbac()" ng-checked="bacallCheck">
+          </label>
+          <span>请勾选您确认撤销复核的宝券融资</span>
+        </div>
+        <ul>
+          <li ng-repeat="bacitem in rzbacList.list">
+            <label class="checkbox">
+              <input type="checkbox" ng-model="ischeckedbac[$index]" ng-click="bacSelection($index)">
+            </label>
+            <div class="right" ng-click="jumpto('tab.rzicheckdetail',{id:bacitem.id,bt:isshow})">
+              <div class="up">
+                <span>{{bacitem.srcDrftNo}}</span>
+                <span>{{cjs.formMoney(bacitem.disctAmt)}}</span>
+              </div>
+              <div class="down">
+                <span>{{cjs.initTimer(bacitem.txnDt)}}</span>
+                <span>实收金额<b>{{cjs.formMoney(bacitem.payAmt)}}</b> </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+  </ion-content>
+  <!-- 驳回&确认签收-->
+  <ion-footer-bar class="bar bar-footer handle_button" ng-if="hasrzdis || hasrzbac">
+    <span ng-click="reject()">驳回</span>
+    <span class="comfirm_ok" ng-click="ApplyCheck()">确认复核</span>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,52 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-flow-path">
+      <ul>
+        <li><i></i><span>选择宝券</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="yizhuanyi-xuanzegys-on"></i><span style="color: #1093f4">选择供应商</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="zhuanrangxinxi-on"></i><span style="color: #1093f4">转让信息</span></li>
+      </ul>
+    </div>
+    <div class="zrang-baoquan-total">
+      <p>可转让宝券金额(元)</p>
+      <h4>{{tool.formMoney(ZrangCorpBaoQuanMsg.isseAmt)}}</h4>
+    </div>
+    <div class="account-detail-list">
+      <ul>
+        <li><i>宝券余额</i><b class="dif-color">{{tool.formMoney(ZrangCorpBaoQuanMsg.isseAmt - sum.res)}}</b></li>
+        <li><i>到期日</i><b>{{tool.initTimer(ZrangCorpBaoQuanMsg.dueDt)}}</b></li>
+        <li><i>距到期日</i><b>{{ZrangCorpBaoQuanMsg.dueDays}}天</b></li>
+        <li><i>转出单号</i><b>{{ZrangCorpBaoQuanMsg.drftNo}}</b></li>
+      </ul>
+    </div>
+    <!-- 预计收益-->
+
+    <div class="anticipated-income">
+      <div class="top-owner"><span>{{CorpName}}</span><i  ng-click="reChooseGYS()"></i></div>
+      <div class="bot-income">
+        <div class="anticipated">
+          <input ng-keyup="focusJuge()" ng-model="sum.res"  class="input-amount" placeholder="请输入金额" type="number"/><i>元</i>
+          <div class="common-style">预计收益 <span>{{((sum.res * counts.count * acc) / yearAcc).toFixed(2)}}</span> 金币</div>
+        </div>
+        <div class="comingday">
+          <ul>
+            <li><i ng-click="minusBtn()" class="minus"></i></li>
+            <li>
+              <input type="number" ng-model="counts.count" ng-keyup="InputCountKeyUp()"/>
+            </li>
+            <li><i ng-click="addBtn()" class="add"></i></li>
+            <li><span>天</span></li>
+          </ul>
+          <div class="common-style hasmarginTop"> 距到期日 <span>{{ZrangCorpBaoQuanMsg.dueDays * 1 + counts.count}}</span> 天</div>
+        </div>
+      </div>
+    </div>
+    <button ng-click="YZYSubmitBtn()"  class="btn-next-step" >
+      提交
+    </button>
+
+  </ion-content>
+</ion-view>>
+

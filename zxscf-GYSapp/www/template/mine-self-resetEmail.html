@@ -1,0 +1,10 @@
+<ion-view view-title="修改邮箱">
+  <ion-nav-buttons side="right">
+    <button ng-click="hasReset()" class="button button-icon" style="font-size: 12px">完成</button>
+  </ion-nav-buttons>
+  <ion-content>
+      <span class="zhuanrangzhong">请输入新的邮箱</span>
+    <!-- ^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$-->
+      <div class="mine-reset-email"><span>邮箱账号</span><input type="text" ng-model="email.value"/></div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="个人中心" hide-tabs="true">
+  <ion-content >
+    <div class="mycenter">
+      <ul>
+        <li>
+          <div class="fl">头像</div>
+          <!--<div class="fr">-->
+            <img on-tap="picture()" class="fr" ng-src="{{imgData.imgSrcOri}}" alt=""/>
+            <i></i>
+          <!--</div>-->
+        </li>
+        <li><div class="fl">姓名</div><div class="fr">{{getUserInfo.usrNm}}</div></li>
+        <li><div class="fl">身份证号码</div><div class="fr">{{getUserInfo.idNo}}</div></li>
+        <li><div class="fl">手机号</div><div class="fr">{{getUserInfo.mobile}}</div></li>
+        <li>
+          <div class="fl">角色</div>
+          <div ng-if="jinbangang" class="fr">经办人&nbsp;</div>
+          <div ng-if="fuhegang" class="fr">复核人&nbsp;</div>
+          <div ng-if="shouquangang" class="fr">授权人&nbsp;</div>
+          <div ng-if="guanliyuan" class="fr">管理员&nbsp;</div>
+        </li>
+        <li ng-click="resetEmail()"><div class="fl">邮箱</div><div class="fr">{{getUserInfo.email}}<i></i></div></li>
+        <li ng-class="getUserInfo.address.length >= 24 ? 'padrzero' : ''" ng-click="resetAddress()"><div class="fl">住址</div><div class="fr">{{getUserInfo.address}}<i></i></div></li>
+        <li><div class="fl">微信号</div><div class="fr">{{getUserInfo.wechat || '无'}}</div></li>
+        <li>
+          <div>身份证</div>
+          <ul class="id_card">
+            <li>
+              <img ng-src="{{idCard1}}" alt="正面照片"/>
+            </li>
+            <li>
+              <img ng-src="{{idCard2}}" alt="反面照片"/>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

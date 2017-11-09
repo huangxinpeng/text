@@ -1,0 +1,23 @@
+<ion-view view-title="银行账户验证" hide-tabs="true">
+  <ion-content>
+    <div class="bank-tips">
+      <img src="./img/index/tip@2x.png" width="90px" height="80px" alt=""/>
+      <br/>
+      <span>
+        您好，为了你的账户安全,<br/>
+        新增银行账号需要进行验证,<br/>
+        以确保账号的真实有效。<br/>
+        平台将向该账号转入随机金额,<br/>
+        在确认收到金额提交校验通过后才有效。<br/>
+        是否确认提交？<br/>
+      </span>
+    </div>
+    <span class="zhuanrangzhong">提示：为确保您的账户安全，请完成身份验证。</span>
+    <div class="bank-sendCode">
+      <span>短信验证</span>
+      <input type="number" ng-model="msCode.value"/>
+      <a href="javascript:;" ng-click="bankNoPopupSendCodeBtn()">{{sendCodeWord}}</a>
+    </div>
+    <button class="btn-next-step" ng-click="toNextStepBtn()">确定</button>
+  </ion-content>
+</ion-view>

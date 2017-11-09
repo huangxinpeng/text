@@ -1,0 +1,26 @@
+<ion-view view-title="我的宝券">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="tab.MineBaoQuanShaiXuan" style="font-size: 12px">筛选</button>
+  </ion-nav-buttons>
+  <ion-content>
+    <!--ui-sref="tab.MineBaoQuanMessage"-->
+    <a ng-repeat="baoquanDetail in MinebaoquanchaxunData" ng-click="toMineBaoQuanMsgBtn(baoquanDetail.id)"  class="hhs-baoquan-list" >
+      <ul>
+        <li>
+          <span>
+            <i></i>{{baoquanDetail.drftNo}}
+          </span>
+          <em ng-if='baoquanDetail.isConfirmed == "1"' class="isjiabao1"></em>
+          <em ng-if='baoquanDetail.isConfirmed == "0"' class="isjiabao2"></em>
+          <b>{{tool.initTimer(baoquanDetail.dueDt)}} 到期</b>
+        </li>
+        <li><span>{{baoquanDetail.drwrNm}}</span><span>{{tool.formMoney(baoquanDetail.isseAmt)}}</span></li>
+        <li><i>{{tool.initTimer(baoquanDetail.isseDt)}}</i>
+          <b ng-if="baoquanDetail.drftStat == '20'" class="baoquan-canuse">可用</b>
+          <b ng-if="baoquanDetail.drftStat == '10'" class="baoquan-cannotuse">冻结</b>
+          <b ng-if="baoquanDetail.drftStat == '90'" class="baoquan-canuse">结清</b>
+        </li>
+      </ul>
+    </a>
+  </ion-content>
+</ion-view>

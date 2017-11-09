@@ -1,0 +1,42 @@
+<ion-view view-title="到期付款申请" hide-tabs="true">
+
+  <ion-content class="baoquandaoqi">
+
+    <div class="checkAll">
+      <label class="checkbox">
+        <input type="checkbox" ng-click="checkAll()" ng-checked="ischeckedAll">
+      </label>
+      <span>请勾选您确认兑换的宝券</span>
+    </div>
+
+    <ul class="sel-item">
+      <li ng-repeat="bqitem in bqDue">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="ischecked[$index]" ng-click="checkthis($index)">
+        </label>
+        <div ng-click="jumpto('tab.bquanduihuan-info',{id:bqitem.id})">
+          <div class="leftside">    <!--  ui-sref="" -->
+            <div>{{bqitem.drwrNm}}</div>
+            <div>{{cjs.initTimer(bqitem.dueDt)}}</div>
+          </div>
+          <div class="rightside">
+            <div ng-if="bqitem.validAmt < 10000 ">0万</div>
+            <div ng-if="bqitem.validAmt < 10000 ">{{cjs.formMoney(bqitem.validAmt)}}</div>
+
+            <div ng-if="bqitem.validAmt >= 10000 ">{{parseInt(bqitem.validAmt / 10000)}}万</div>
+            <div ng-if="bqitem.validAmt >= 10000 ">{{cjs.formMoney((bqitem.validAmt / 10000 + '').split('.')[1])}}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </ion-content>
+
+  <!-- 申请兑付-->
+  <div class="bar bar-footer apply_button" ng-click="solutionpay()">
+    <div>
+      申请兑付
+    </div>
+  </div>
+
+</ion-view>

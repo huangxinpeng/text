@@ -1,0 +1,36 @@
+<ion-view view-title="融资历史" hide-tabs="true">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="tab.rongziHistoryshaixuan" style="font-size: 12px">筛选</button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="zrang-total-account">
+      <h4>{{cjs.formMoney(Rzhistory.sum)}}</h4>
+      <p>至今已累计转让总额(元)</p>
+      <div>已付利息总额(元) <i>{{cjs.formMoney(Rzhistory.rateSum)}}</i></div>
+    </div>
+    <span class="zhuanrangzhong">融资明细</span>
+    <div class="zrang-zhuanru-company">
+      <ul>
+        <li ng-repeat="rzhistoryitem in Rzhistory.lists.list">
+          <a ng-href="#/tab/rongzi/history/message/{{rzhistoryitem.id}}"> <!--ui-sref="tab.rongziMessage"--> <!--ng-href="#/tab/rongzi/history/message"-->
+            <div class="company-name">
+              <span class="fl">{{rzhistoryitem.srcDrftNo}}</span>
+              <span class="fr">{{rzhistoryitem.disctAmt}}</span>
+            </div>
+            <div class="zhuanru-time">
+              <span class="fl">{{cjs.initTimer(rzhistoryitem.txnDt)}}</span>
+              <span ng-if="rzhistoryitem.txnStat=='03'" class="fr">已取消</span>
+              <span ng-if="rzhistoryitem.txnStat=='05'" class="fr">已撤回</span>
+              <span ng-if="rzhistoryitem.txnStat=='12'" class="fr" style="color: red;">已驳回</span>
+              <span ng-if="rzhistoryitem.txnStat=='14'" class="fr" style="color: red;">已拒绝</span>
+              <span ng-if="rzhistoryitem.txnStat=='15'" class="fr">已放款</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </ion-content>
+</ion-view>
+

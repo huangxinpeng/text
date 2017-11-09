@@ -1,0 +1,22 @@
+<div class="popup-zrang-newregect">
+  <div class="title">驳回确认</div>
+  <div class="info">
+    <div>您是否确认驳回本次融资申请?</div>
+    <div>请选择驳回原因:</div>
+
+    <div class="newcheckbox" on-tap="checka()">
+      <i ng-class="{true:'active',false:''}[ischecked]"></i>
+      <span>融资信息填写错误</span>
+    </div>
+
+    <div class="newcheckbox" on-tap="checkb()">
+      <i ng-class="{true:'',false:'active'}[ischecked]"></i>
+      <span>其他</span>
+    </div>
+
+  </div>
+  <div class="my_btn">
+    <span ng-click="handle_cancel()">取消</span>
+    <span ng-click="handle_comfirm()">确定</span>
+  </div>
+</div>

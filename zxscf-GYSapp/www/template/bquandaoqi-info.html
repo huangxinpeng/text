@@ -1,0 +1,57 @@
+<ion-view title="宝券信息" hide-tabs="true">
+
+  <ion-content class="baoquan-info">
+
+      <ul>
+        <li>
+          <span>转出方</span><span>{{bqdetail.prevOwnerNm}}</span>
+        </li>
+        <li>
+          <span>转让金额</span><span><b>{{bqdetail.isseAmt}}</b></span>
+        </li>
+        <li>
+          <span>到期日</span><span>{{cjs.initTimer(bqdetail.dueDt)}}</span>
+        </li>
+        <li>
+          <span>距离期日</span><span>{{bqdetail.dueDays}}天</span>
+        </li>
+        <li>
+          <span>开单方</span><span>{{bqdetail.drwrNm}}</span>
+        </li>
+        <li>
+          <span>持有方</span><span>111100</span>
+        </li>
+        <li>
+          <span>宝券编号</span><span>{{bqdetail.drftNo}}</span>
+        </li>
+      </ul>
+
+
+    <div class="cho_card">
+      <div ng-click="droplist()">
+        <span>收款账号</span>
+        <div>
+          <span class="account" ng-if="showRo == '1'">默认账户</span>
+          <span>{{showCo}}</span>
+          <i></i>
+        </div>
+      </div>
+      <ul id="countNoList" ng-class="{true:'show',false:'hide'}[showList]">
+        <li ng-repeat="item in acctList" ng-click="chooseNo($index)">
+          <span>{{item.openBrhNm}}</span>
+          <span>{{item.acctNo}}</span>
+          <span ng-if="item.defRecNo == '1'" class="account">默认账户</span>
+          <span class="city">{{item.bankCity}}</span>
+        </li>
+      </ul>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar class="apply_button" ng-click="confirm()">
+    <div>
+      申请兑付
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

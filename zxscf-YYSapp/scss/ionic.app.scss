@@ -1,0 +1,77 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../www/lib/ionic/scss/ionic";
+
+// zxscf default set
+$positive-light : #1094f5;
+$positive-size: 14px;
+body{
+  font-size: $positive-size;
+  font-family: PingFangSC;
+}
+// zxscf global module
+.tabs {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+.tabs-item-hide {
+  &  .tabs{
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    bottom: -$tabs-height;
+    display: flex;
+  }
+}
+/*没有数据*/
+.nodata{
+  .bgimg{
+    width: 100%;
+    height: 146px;
+    background: url('../img/icon/wushuju.png')no-repeat center/262px 146px;
+    z-index: 100;
+    margin-top:calc(50% - 40px);
+    margin-bottom: 28px
+  }
+  .error{
+    width: 100%;
+    height: 124px;
+    background: url('../img/icon/jiazaishibai.png')no-repeat center/246px 124px;
+    z-index: 100;
+    margin-top:calc(50% - 40px);
+    margin-bottom: 28px
+  }
+  .txtinfo{
+    color:#666;
+    font-size: 18px;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+
+
+
+
+/* include zxscf private module */
+@import "ionic.hhs";
+@import "ionic.cd";

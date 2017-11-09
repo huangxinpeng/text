@@ -1,0 +1,21 @@
+<ion-view  hide-tabs="true">
+  <ion-nav-title class="activity-center-tab">
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input id="ShaiXuanInsetInput" type="text" placeholder="请输入转让相关信息">
+      </label>
+    </div>
+  </ion-nav-title>
+
+  <ion-content>
+
+  <div class="fix-shaixuan-kinds">
+    <div class="shaixuan-biaoti"><i></i><span>按分类筛选</span></div>
+    <ul>
+      <li ng-click="search('11')">签收成功</li>
+      <li ng-click="search('12')">签收失败</li>
+    </ul>
+  </div>
+</ion-content>
+</ion-view>

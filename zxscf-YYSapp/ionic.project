@@ -1,0 +1,8 @@
+{
+  "name": "zxscf-yys",
+  "app_id": "",
+   "gulpStartupTasks": [
+       "sass",
+       "watch"
+   ]
+}

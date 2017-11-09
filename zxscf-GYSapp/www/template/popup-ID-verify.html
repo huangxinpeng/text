@@ -1,0 +1,15 @@
+<div class="popup-qianshou">
+  <div class="myTitle">身份验证</div>
+  <div class="myPop">提示：如您确认删除该账号，请进行身份验证。</div>
+
+  <div class="yanzheng">
+    <input type="text" ng-model="msCode.value" placeholder="短信验证"/>
+    <a href="javascript:;" ng-click="getMsgcode()">发送验证码</a>
+  </div>
+
+  <div class="my_btn">
+    <span ng-click="giveout()">取消</span>
+    <span ng-click="makesure()">确定</span>
+  </div>
+</div>
+

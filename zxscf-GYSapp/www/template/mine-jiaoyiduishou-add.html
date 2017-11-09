@@ -1,0 +1,17 @@
+<ion-view view-title="新增交易对手" hide-tabs="true">
+  <ion-content>
+    <div class="search-company">
+      <i class="ion-ios-search-strong"></i>
+      <input type="text" ng-model="searchCorpName.value" ng-keyup="searchCorp()" placeholder="请输入企业名称"/>
+    </div>
+    <ul class="addJiaoYiDuiShou">
+      <li ng-repeat="corpList in corpLists"><span>{{corpList.custCnNm}}</span><i ng-click="AddPartnerBtn(corpList.custNo)"></i></li>
+    </ul>
+    <div class="toTellManager" ng-if='corpLists.length == 0 || !corpLists' >
+      <img src="./img/icon2.x/gantanhao.png" width="100px" height="100px" alt=""/>
+      <p>抱歉，没有搜索到你所输入的企业名称</p>
+      <a on-tap="MailAdmin()" href="javascript:void (0)">通知管理员</a>
+    </div>
+  </ion-content>
+</ion-view>
+

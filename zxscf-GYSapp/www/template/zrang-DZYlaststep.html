@@ -1,0 +1,45 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-flow-path">
+      <ul>
+        <li><i class="duozhuanyi-jinbi"></i><span>输入金额</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="xuanzebaoquan-on"></i><span style="color: #1093f4">选择宝券</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="zhuanrangxinxi-on"></i><span style="color: #1093f4">转让信息</span></li>
+      </ul>
+    </div>
+    <div class="DZY-yingzhuanrang">
+      <h4>应转让总额(元)</h4>
+      <p>{{tool.formMoney(DYZBaoQuanArray.sum)}}</p>
+      <span><i>转入方企业</i><b>{{DYZBaoQuanArray.corpName}}</b></span>
+    </div>
+    <span class="zhuanrangzhong" style="height: 25px">宝券明细</span>
+    <div class="anticipated-income" ng-repeat="DZYlist in DYZBaoQuanArray.list">
+      <div class="bot-income">
+        <div class="anticipated">
+          <input placeholder="请输入金额" class="input-amount" type="number" ng-keyup="JugeDZYsum($index)" ng-model="DZYsum[$index]"/><i>元</i>
+          <div class="common-style">预计收益 <span>{{(DZYcounts[$index] * DZYsum[$index] * acc / 360).toFixed(2)}}</span> 金币</div>
+          <span>可用金额 {{tool.formMoney(DZYlist.isseAmt)}}</span>
+        </div>
+        <div class="comingday">
+          <ul>
+            <li><i class="minus" ng-click="minusBtn($index)"></i></li>
+            <li><input type="number" ng-model="DZYcounts[$index]" ng-keyup="DZYKeyUp($index)"/></li>
+            <li><i class="add" ng-click="addBtn($index)"></i></li>
+            <li><span>天</span></li>
+          </ul>
+          <div class="common-style"> 距到期日 <span>{{DZYlist.dueDays + DZYcounts[$index]}}</span> 天</div>
+          <span>距离期日 {{DZYlist.dueDays}} 天</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="totalDiv" style="margin-top: 10px"><span>合计</span><b>{{tool.formMoney(DZYtotalSum)}}</b></div>
+
+    <button class="btn-next-step" ng-click="DZYyanzhengBtn()">提交</button>
+
+  </ion-content>
+
+</ion-view>>
+

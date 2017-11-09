@@ -1,0 +1,42 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-flow-path">
+      <ul>
+        <li><i></i><span>选择宝券</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="xuanzebaoquan-GYS"></i><span style="color: #1093f4">选择供应商</span></li>
+        <li><b></b></li>
+        <li><i></i><span>宝券拆分</span></li>
+      </ul>
+    </div>
+    <div class="zrang-baoquan-total">
+      <p>可转让宝券金额(元)</p>
+      <h4>{{tool.formMoney(BQDetails.isseAmt)}}</h4>
+    </div>
+    <div class="account-detail-list">
+      <ul>
+        <li><i>宝券余额</i><b class="dif-color">{{tool.formMoney(BQDetails.isseAmt)}}</b></li>
+        <li><i>到期日</i><b>{{tool.initTimer(BQDetails.dueDt)}}</b></li>
+        <li><i>距到期日</i><b>{{BQDetails.dueDays}}天</b></li>
+        <li><i>转出单号</i><b>{{BQDetails.drftNo}}</b></li>
+      </ul>
+    </div>
+    <div class="zrang-choose-GYS">
+      <span>请选择供应商</span>
+      <a ui-sref="tab.YZDChoosegys"></a>
+    </div>
+
+    <ul class="hasChooseGYS">
+      <li ng-repeat="YZDGYSArrays in YZDGYSArray">
+        <span>{{YZDGYSArrays.custCnNm}}</span>
+        <i ng-click="removeGYSBtn($index)"></i>
+      </li>
+    </ul>
+    <!-- ui-sref="tab.YZDLastStep"-->
+    <button ng-class="canBeClick ? 'disabled' : ''"  ng-click="JumpToLastStep()" class="btn-next-step" >
+      下一步
+    </button>
+  </ion-content>
+</ion-view>>
+
+

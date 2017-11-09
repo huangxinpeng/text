@@ -1,0 +1,77 @@
+<ion-view hide-tabs="true">
+  <ion-nav-title class="activity-center-tab">
+    <div class="bar bar-header mytab-btns">
+      <div class="title">
+        <span>
+          <i ng-class="{true:'active',flase:''}[isCur]" ng-click="showzr()">转让收益</i>
+          <i ng-class="{true:'',false:'active'}[isCur]" ng-click="showrz()">融资收益</i>
+        </span>
+      </div>
+    </div>
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ui-sref="tab.mycoin-sy-saixuan" style="font-size: 12px">筛选</button>
+  </ion-nav-buttons>
+
+  <ion-conten>
+
+    <ion-content class="mycoin" ng-show="isCur">
+
+      <!--筛选后的信息提示-->
+      <!--<div ng-show="isCur" class="saixuan">
+        <span>融资成功<i></i></span>
+        <span>2017-07-08至2017-08-08<i></i></span>
+      </div>-->
+
+      <div class="shouyi">
+        <ul>
+          <li>
+            <div><span>转让票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>转让票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>转让票据</span><span>+131</span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>转让票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+
+    <ion-content class="mycoin" ng-hide="isCur">
+      <div class="shouyi">
+        <ul>
+          <li>
+            <div><span>融资票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>融资票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>融资票据</span><span>+131</span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>融资票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+          <li>
+            <div><span>融资票据</span><span><i>+131</i></span></div>
+            <div><span>2017-03-03</span><span>1,500.00</span></div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+  </ion-conten>
+
+</ion-view>

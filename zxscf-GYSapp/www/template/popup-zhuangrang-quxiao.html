@@ -1,0 +1,25 @@
+
+<div class="popup-qianshou popup-apply-insurance">
+  <div class="myTitle">宝券转让复核</div>
+  <div class="myPop">提示：如您确认撤销复核该宝券，请进行身份验证并签署下述协议。</div>
+
+  <div class="yanzheng">
+    <input type="text" placeholder="短信验证" ng-model="input.MsgCode"/>
+    <a href="javascript:;" ng-click="getMsgcode()">{{getmessageinfo}}</a>
+  </div>
+
+  <div class="read-agreement">
+    <div class="HHScheckbox">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="input.isok">
+      </label>
+    </div>
+    <span>我已认真阅读并同意接受<i>《E秒付平台宝<br/>
+      券应收账款债权转让协议》</i>及<i>《债权转让<br/>
+      通知》</i>的全部内容。</span>
+  </div>
+  <div class="my_btn">
+    <span ng-click="handleOff()">取消</span>
+    <span ng-click="handleOn()">确定</span>
+  </div>
+</div>

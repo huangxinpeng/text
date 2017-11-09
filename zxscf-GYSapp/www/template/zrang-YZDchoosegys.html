@@ -1,0 +1,28 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-nav-buttons side="left">
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button ui-sref="tab.YZDAddJiaoYiDuiShou" class="button"><i class="ion-plus"></i></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <span class="zhuanrangzhong">最近交易对手</span>
+
+    <ul class="checkbox-in-jiaoyiduishou">
+      <li ng-repeat="MineJiaoYiDuiShou in MineJiaoYiDuiShous" ng-click="clickCheck($index)">
+        <div class="HHScheckbox">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="ischecked[$index]" >
+          </label>
+        </div>
+          <span>{{MineJiaoYiDuiShou.custCnNm}}</span><b>交易{{MineJiaoYiDuiShou.txnCount}}次</b>
+      </li>
+    </ul>
+
+    <!-- ui-sref="tab.YZDLastStep"-->
+
+    <button class="btn-next-step" ng-click="YZDChooseGYSBtn()">
+      确认
+    </button>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,25 @@
+
+<div class="popup-qianshou popup-apply-insurance">
+  <div class="myTitle">宝券融资复核</div>
+  <div class="myPop">提示：如您确认复核{{difWordShow}}，请进行身份验证并签署下述协议。</div>
+<!---->
+  <div class="yanzheng">
+    <input type="text" placeholder="短信验证" ng-model="input.MsgCode"/>
+    <a href="javascript:;" ng-click="getMsgcode()">{{getmessageinfo}}</a>
+  </div>
+
+  <div class="read-agreement">
+    <div class="HHScheckbox">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="input.isok">
+      </label>
+    </div>
+    <span>我已认真阅读并同意接受<i on-tap="RZxieyiBtn()">《晨蜂金融平台<br/>
+      宝券商业保理融资协议》</i>及<i on-tap="RZtongzhi()">《债权转让通<br/>
+      知》</i>的全部内容。</span>
+  </div>
+  <div class="my_btn">
+    <span ng-click="handleOff()">取消</span>
+    <span ng-click="handleOn()">确定</span>
+  </div>
+</div>

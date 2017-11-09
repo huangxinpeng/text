@@ -1,0 +1,21 @@
+<ion-view view-title="转让信息" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-total-account">
+      <h4>{{tool.formMoney(ZrangDetailMsg.txnAmt) || 0}}</h4>
+      <p>待签收转让金额(元)</p>
+    </div>
+    <span class="zhuanrangzhong">转让明细</span>
+    <div class="account-detail-list">
+      <ul>
+        <li><i>转入方</i><b>{{ZrangDetailMsg.drwrNm || '无'}}</b></li>
+        <li><i>到期日</i><b>{{tool.initTimer(ZrangDetailMsg.srcDueDt) || '无'}}</b></li>
+        <li><i>距到期日</i><b>{{ZrangDetailMsg.delayDays || 0}}天</b></li>
+        <li><i>宝券编号</i><b>{{ZrangDetailMsg.srcDrftNo || '无'}}</b></li>
+        <li><i>申请时间</i><b>{{tool.initTimer(ZrangDetailMsg.txnDt) || '无'}}</b></li>
+      </ul>
+    </div>
+    <button ng-if="ZrangDetailMsg.txnStat == '10'" ng-click="CheHuiBtn()" id="ZrangMessageCheHui" class="button button-block button-positive">
+      撤回
+    </button>
+  </ion-content>
+</ion-view>

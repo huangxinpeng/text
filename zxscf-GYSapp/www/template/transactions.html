@@ -1,0 +1,129 @@
+<ion-view view-title="交易量" hide-tabs="true">
+
+  <ion-nav-title class="activity-center-tab">
+    <div class="bar bar-header mytab-threebtns">
+      <div class="title">
+        <span>
+          <i ng-class="{true:'active',flase:''}[rzdetail]" ng-click="rongzi()">融资</i>
+          <i ng-class="{true:'active',flase:''}[zrdetail]" ng-click="zuangrang()">转让</i>
+          <i ng-class="{true:'active',flase:''}[qsdetail]" ng-click="qianshou()">签收</i>
+        </span>
+      </div>
+    </div>
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <!--  ui-sref="tab.transactionsQSsearch" -->
+    <button class="button button-icon"  style="font-size: 12px" ng-click="jump()">筛选</button>
+  </ion-nav-buttons>
+
+  <ion-content class="trade_total" scroll="false">
+    <!--融资-->
+    <ion-content class="rz" ng-show="rzdetail">
+      <div class="total-head" ng-if="rzList.list.length">
+
+        <div ng-if="rztxtinfo == '15'">融资已放款</div>
+        <div ng-if="rztxtinfo == '14'">融资已拒绝</div>
+        <div ng-if="rztxtinfo == '12'">融资已驳回</div>
+        <div ng-if="rztxtinfo == '05'">融资已撤回</div>
+        <div ng-if="rztxtinfo == '03'">融资已取消</div>
+        <div ng-if="!issearchrz">{{rztxtinfo}}</div>
+        <i ng-click="jumpto('tab.transactions-saixuan')"></i>
+
+       <!-- <div ng-show="issearchrz" class="saixuan">
+          <span>{{rztxtinfo}}<i></i></span>
+          <span>2017-07-08至2017-08-08<i></i></span>
+        </div>-->
+
+      </div>
+
+      <ul>
+        <li ng-repeat="rzitem in rzList.list">
+          <div class="up"><span>{{rzitem.srcDrftNo}}</span><span>{{rzitem.disctAmt}}</span></div>
+          <div class="down"><span>{{cjs.initTimer(rzitem.txnDt)}}</span>
+            <span ng-if="rzitem.txnStat == '15'" class="success">已放款</span>
+            <span ng-if="rzitem.txnStat == '14'" class="fail">已拒绝</span>
+            <span ng-if="rzitem.txnStat == '12'" class="fail">已驳回</span>
+            <span ng-if="rzitem.txnStat == '05'" class="fail">已撤回</span>
+            <span ng-if="rzitem.txnStat == '03'" class="fail">已取消</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nodata" ng-if="!rzList.list.length">
+        <div class="bgimg"></div>
+        <div class="txtinfo">暂无数据</div>
+      </div>
+    </ion-content>
+    <!--签收-->
+    <ion-content class="qs" ng-show="qsdetail">
+      <div class="total-head" ng-if="qsList.list.length">
+
+        <div ng-if="qstxtinfo == '11'">签收成功</div>
+        <div ng-if="qstxtinfo == '12'">签收失败</div>
+        <div ng-if="!issearchqs">{{qstxtinfo}}</div>
+        <i ng-click="jumpto('tab.transactions-saixuan')"></i>
+
+        <!--<div ng-if="issearchqs" class="saixuan">
+          <span>融资成功<i></i></span>
+          <span>2017-07-08至2017-08-08<i></i></span>
+        </div>-->
+
+      </div>
+      <ul>
+        <li ng-repeat="qsitem in qsList.list">
+          <div class="up"><span>{{qsitem.reqCustNm}}</span><span>{{qsitem.txnAmt}}</span></div>
+          <div class="down"><span>{{cjs.initTimer(qsitem.txnDt)}}</span>
+            <span ng-if="qsitem.txnStat == '11'" class="success">已签收</span>
+            <span ng-if="qsitem.txnStat == '12'" class="fail">已驳回</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nodata" ng-if="!qsList.list.length">
+        <div class="bgimg"></div>
+        <div class="txtinfo">暂无数据</div>
+      </div>
+
+    </ion-content>
+    <!--转让-->
+    <ion-content class="zr" ng-show="zrdetail">
+      <div class="total-head" ng-if="zrList.list.length">
+
+        <div ng-if="zrtxtinfo == '03'">转让已取消</div>
+        <div ng-if="zrtxtinfo == '05'">转让已撤回</div>
+        <div ng-if="zrtxtinfo == '11'">转让已签收</div>
+        <div ng-if="zrtxtinfo == '12'">转让已驳回</div>
+        <div ng-if="!issearchzr">{{zrtxtinfo}}</div>
+        <i ng-click="jumpto('tab.transactions-saixuan')"></i>
+
+        <!--<div ng-show="issearchzr" class="saixuan">
+          <span>{{}}<i></i></span>
+          <span>2017-07-08至2017-08-08<i></i></span>
+        </div>-->
+
+      </div>
+      <ul>
+        <li ng-repeat="zritem in zrList.list">
+          <div class="up"><span>{{zritem.reqCustNm}}</span><span>{{zritem.txnAmt}}</span></div>
+          <div class="down"><span>{{cjs.initTimer(zritem.txnDt)}}</span>
+            <span ng-if="zritem.txnStat == '03'" class="fail">已取消</span>
+            <span ng-if="zritem.txnStat == '05'" class="fail">已撤回</span>
+            <span ng-if="zritem.txnStat == '11'" class="success">已签收</span>
+            <span ng-if="zritem.txnStat == '12'" class="fail">已驳回</span>
+          </div>
+        </li>
+      </ul>
+
+
+      <div class="nodata" ng-if="!zrList.list.length">
+        <div class="bgimg"></div>
+        <div class="txtinfo">暂无数据</div>
+      </div>
+
+    </ion-content>
+
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="债权转让通知列表" hide-tabs="true">
+  <ion-content>
+    <div class="fileReadList">
+      <ul>
+        <li ng-repeat="fileList in fileLists" ng-click="toReadFileBtn(fileList.id)">
+          <span class="fl blue">{{fileList.srcDrftNo}}</span>
+          <span class="fr">债权转让通知</span>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>
+

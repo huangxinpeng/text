@@ -1,0 +1,18 @@
+<ion-view view-title="历史" hide-tabs="true">
+  <ion-content>
+    <div class="advice-history">
+      <ul>
+
+        <li ng-repeat="item in alist">
+          <ol>
+            <li>{{item.reqContent}}</li>
+            <li>{{cjs.initTimer(item.crtTs)}}</li>
+            <li>-------------------------------</li>
+            <li>答复：{{item.ansContent}}</li>
+          </ol>
+        </li>
+
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

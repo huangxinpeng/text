@@ -1,0 +1,39 @@
+<ion-view view-title="用户添加" hide-tabs="true">
+  <ion-content>
+    <div class="user-message-detail">
+      <ul>
+        <li><span>姓名</span><input ng-model="usrNm.value" type="text" placeholder="请输入姓名"/></li>
+        <li><span>身份证</span><input ng-model="idNo.value" type="text" placeholder="请输入身份证"/></li>
+        <li><span>手机号</span><input ng-model="mobile.value" type="text" placeholder="请输入手机号"/></li>
+        <li ui-sref="tab.MineUserAddChooseRole"><span>角色</span>
+          <span  class="choose-manage">
+            {{userRoleChooseWord}}
+            <i class="right-icon"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div ng-if="rolesLength" class="idNoArea">
+      <p>身份证</p>
+      <div class="img-left">
+        <i></i>
+      </div>
+      <div class="img-right">
+        <i></i>
+      </div>
+
+    </div>
+    </div>
+    <span class="zhuanrangzhong" style="font-size: 12px">提示: 为确保您的账户安全, 请完成身份验证。</span>
+    <div class="hhs-duanxinyanzheng">
+      <label class="item item-input">
+        <span class="input-label">短信验证</span>
+        <input  type="number" ng-model="mscode.value">
+      </label>
+      <a href="javascript:void(0);" ng-click="getCodeBtn()">{{sendCodeWord}}</a>
+    </div>
+    <!-- ui-sref="tab.MineUserManage"-->
+    <button class="btn-next-step" ng-click="userAddBtn()">提交</button>
+
+  </ion-content>
+</ion-view>

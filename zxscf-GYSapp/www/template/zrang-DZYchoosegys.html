@@ -1,0 +1,23 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-nav-buttons side="left">
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button ui-sref="tab.DZYAddJiaoYiDuiShou" class="button"><i class="ion-plus"></i></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <span class="zhuanrangzhong">最近交易对手</span>
+    <div class="business-of-rival">
+      <ul class="company-list-bottom">
+        <li ng-repeat="DZYChoose in DZYChooseGYS">
+          <a href="javascript:void(0);" ng-click="DZYChooseGYSBtn(DZYChoose.custCnNm,DZYChoose.custNo)">
+            <span>{{DZYChoose.custCnNm}}</span>
+            <b>交易{{DZYChoose.txnCount}}次</b>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+  </ion-content>
+</ion-view>
+

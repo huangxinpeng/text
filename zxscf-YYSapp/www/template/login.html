@@ -1,0 +1,32 @@
+<ion-view view-title="登录" hide-tabs="true" >
+
+  <div class="bar bar-header my-bar-header" style="border-bottom: 1px solid #ccc;">
+    <div class="h1 title">登录</div>
+  </div>
+
+
+  <ion-content class="login" scroll="false">
+    <div class="login-img"></div>
+    <div class="phonenumber"><label class="change-border item item-input">
+      <i class="icon-phone"></i><input class="login-input" type="text" ng-model="user.phonenumber" placeholder="账号"></label></div>
+    <div class="pwd"><label class="change-border item item-input">
+      <i class="icon-pwd"></i><input class="login-input" type="password" ng-model="user.password" placeholder="密码"></label></div>
+    <div class="pwd" ng-if="tooMore">
+      <label class="change-border item item-input">
+        <span style="font-size: 12px">验证码</span>
+        <input type="text" class="login-input" ng-model="user.msgcode"/>
+      </label>
+      <span ng-click="code()" style="color:#1094f5;font-size: 14px">{{getcode}}</span>
+    </div>
+
+    <div class="">
+      <a  id="mybtn" ng-click="login()" >登录</a>
+    </div>
+
+    <div class="forgetpwd">
+      <a ui-sref="forgetpwd" id="forget-pwd">忘记密码</a>
+    </div>
+  </ion-content>
+</ion-view>
+
+

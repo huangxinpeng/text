@@ -1,0 +1,29 @@
+<ion-view view-title="银行账户" hide-tabs="true">
+  <ion-nav-buttons side="right">
+    <button class="button" ui-sref="tab.MineBankIDAdd">
+      <i class="ion-plus"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="bank-message" ng-repeat="bankMsg in MineBankIDs" ng-click="bankDifStateGo(bankMsg.checkStu,bankMsg.id)">
+      <div class="left-id">
+        <h4><i>{{bankNameTurn.concat(bankMsg.openBrhNm.slice(0, 4)).concat('xxx').concat(bankMsg.openBrhNm.slice(-2))}}</i><b>{{bankMsg.bankCity}}</b></h4>
+        <p>{{numberTurn.concat(bankMsg.acctNo.slice(0, 4)).concat('**** ****').concat(bankMsg.acctNo.slice(-4))}}</p>
+      </div>
+      <div class="right-state">
+        <b ng-class="bankMsg.defRecNo== '1' ? 'moren' : ''"></b>
+        <!-- 未生效-->
+        <span ng-if="bankMsg.checkStu == '0'" class="red">未生效</span>
+        <!-- 只能删除-->
+        <span ng-if="bankMsg.checkStu == '2'" class="blue">已生效</span>
+        <!-- 短信验证-->
+        <span ng-if="bankMsg.checkStu == '1'" class="red">待验证</span>
+        <span ng-if="bankMsg.checkStu == '3'" class="red">验证失败</span>
+        <i></i>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
+
+

@@ -1,0 +1,51 @@
+<ion-view view-title="登录" hide-tabs="true" >
+  <div class="bar bar-header my-bar-header" style="border-bottom: 1px solid #ccc;">
+    <div class="h1 title">登录</div>
+    <a ui-sref="companyRegister" class="button button-clear button-light" style="color: #333">企业注册</a>
+  </div>
+  <!--<ion-nav-buttons side="right">-->
+    <!--<button class="button button-icon" ui-sref="companyRegister" style="font-size: 12px">企业注册</button>-->
+  <!--</ion-nav-buttons>-->
+
+  <ion-content class="login" style="background: #ffffff">
+    <div class="login-img"></div>
+
+    <div class="list list-inset">
+      <label class="change-border item item-input">
+      <i class="icon-phone"></i>
+        <!-- ng-pattern="/^1[3|4|5|8][0-9]\d{4,8}$/" -->
+        <input class="login-input" type="text" placeholder="手机号" ng-model="user.username" />
+      </label>
+    </div>
+
+    <div class="list list-inset">
+      <label class="change-border item item-input">
+      <i class="icon-pwd"></i>
+        <input class="login-input" type="password"  placeholder="密码" ng-model="user.password" />
+      </label>
+    </div>
+
+    <div class="list list-inset topele" ng-if="active">
+      <label class="change-border item item-input">
+        <input class="login-input" type="number"  placeholder="请输入验证码" ng-model="user.yanzhengma" />
+      </label>
+      <span ng-click="code()" class="getYanZhengMa" style="font-size: 14px;color:#0f90f1;padding-right: 4px">获取验证码</span>
+    </div>
+
+
+    <div class="">
+      <!-- ui-sref="tab.home"-->
+      <a id="btn-login" ng-click="LoginBtn()">登录</a>
+    </div>
+    <div class="btn forget-pwd">
+      <a ui-sref="forgetpwd" id="forget-pwd">忘记密码</a>
+    </div>
+
+  </ion-content>
+
+  <!--<div class="bar bar-footer">-->
+    <!--<img class="waterImg" src="./img/icon2.x/login_bg.png" width="100%" height="115px" alt=""/>-->
+  <!--</div>-->
+
+</ion-view>
+

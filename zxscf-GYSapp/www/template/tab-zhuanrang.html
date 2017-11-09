@@ -1,0 +1,53 @@
+
+<ion-view view-title="转让" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <button  class="button button-icon" ui-sref="tab.zranghistory" style="font-size: 12px">转让历史</button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="zrang-content">
+      <div class="zrang-choose-ways">
+        <a ui-sref="tab.yizhuanyi"><i></i><span>一转一</span></a>
+        <a ui-sref="tab.yizhuanduo"><i></i><span>一转多</span></a>
+        <a ui-sref="tab.duozhuanyi"><i></i><span>多转一</span></a>
+      </div>
+      <div class="zrang-total-amount">
+        <i>可转宝券总额(元)</i>
+        <span ng-hide="isOpen" style="font-size: 30px;">******</span>
+        <span ng-show="isOpen">{{comjs.formMoney(ZrangTotalSum)}}</span>
+        <b ng-click="eyeCtrl()" ng-class="{true:'eyeOpen',false:'eyeClose'}[isOpen]"></b>
+      </div>
+      <span class="zhuanrangzhong">转让中</span>
+      <div class="zrang-zhuanru-company">
+        <ul>
+          <li ng-repeat="ZrangZhong in ZrangZhongs;">
+            <a href="javascript:void(0);"
+               class="test-swipe-left"
+               ng-class="ZrangZhong.isswipe ? 'self-swipe-left' : 'self-swipe-left-none';"
+               on-swipe-left="addTransform($index);"
+               on-swipe-right="transformNone($index);"
+               ng-click="ZRDetailBtn(ZrangZhong.id);"
+               ng-class="ZrangZhong.txnStat == '04' ? '' : 'self-swipe-left-none';">
+                <div class="company-name">
+                  <span class="fl">{{ZrangZhong.rcvCustNm}}</span>
+                  <span class="fr">{{comjs.formMoney(ZrangZhong.txnAmt,2)}}</span>
+                </div>
+                <b></b>
+                <div class="zhuanru-time">
+                  <span class="fl">{{comjs.initTimer(ZrangZhong.txnDt)}}</span>
+                  <span ng-if="ZrangZhong.txnStat == '01'" class="fr">待复核</span>
+                  <span ng-if="ZrangZhong.txnStat == '02'" class="fr">已复核</span>
+                  <span ng-if="ZrangZhong.txnStat == '04'" class="fr">撤回待复核</span>
+                  <span ng-if="ZrangZhong.txnStat == '10'" class="fr">待签收</span>
+                </div>
+                <i ng-if="ZrangZhong.txnStat == '10'" ng-click="ZrangCheHuiBtn($event,ZrangZhong.id,$index)">撤回</i>
+                <i ng-if="ZrangZhong.txnStat == '01'" style="background:gray;" ng-click="ZrangQuXiaoBtn($event,ZrangZhong.id,$index)">取消</i>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="load.canBeLoad" on-infinite="scroll.loadMore()" distance="1%" ></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

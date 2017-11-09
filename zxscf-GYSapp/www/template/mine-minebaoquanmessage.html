@@ -1,0 +1,29 @@
+<ion-view view-title="宝券信息" hide-tabs="true">
+  <ion-content>
+    <div class="baoquanMessageDetail">
+      <ul>
+        <li><span>开立方</span><span>{{MineBaoQuanDetails.drwrNm}}</span></li>
+        <li><span>余额</span><span style="font-weight: 600;" class="BQ-color-red">{{tool.formMoney(MineBaoQuanDetails.validAmt)}}</span></li>
+        <li><span>到期日</span><span class="BQ-color-blue">{{tool.initTimer(MineBaoQuanDetails.dueDt)}}</span></li>
+        <li><span>转入日期</span><span>{{tool.initTimer(MineBaoQuanDetails.isseDt)}}</span></li>
+        <li><span>转让方</span><span>{{MineBaoQuanDetails.prevOwnerNm}}</span></li>
+        <li><span>担保方</span><span>{{MineBaoQuanDetails.confirmingCustNm || '无'}}</span></li>
+        <li><span>宝券编号</span><span>{{MineBaoQuanDetails.drftNo}}</span></li>
+        <li>
+          <span>状态</span>
+          <span ng-if="MineBaoQuanDetails.drftStat == '20'" class="BQ-color-blue">可用</span>
+          <span ng-if="MineBaoQuanDetails.drftStat == '10'" class="BQ-color-red">冻结</span>
+          <span ng-if="MineBaoQuanDetails.drftStat == '90'" class="BQ-color-blue">结清</span>
+        </li>
+      </ul>
+    </div>
+    <button ng-click="toNextstep(MineBaoQuanDetails.validAmt,MineBaoQuanDetails.dueDays,MineBaoQuanDetails.drftNo)" ng-if="MineBaoQuanDetails.isConfirmed == '0' && MineBaoQuanDetails.drftStat == '20'" class="btn-next-step" >申请加保</button>
+
+    <div ng-if="MineBaoQuanDetails.isConfirmed == '1'" class="mine-list" style="margin-top: 10px" >
+      <ul>
+        <li ui-sref="tab.BaoQuanXuZhi" class="baoquanjiabao"><a><i></i><span>宝券加保申请人须知</span><b></b></a></li>
+      </ul>
+    </div>
+    <!-- ui-sref="tab.ApplyInsurance"-->
+  </ion-content>
+</ion-view>

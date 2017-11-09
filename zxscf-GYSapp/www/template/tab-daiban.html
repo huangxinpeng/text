@@ -1,0 +1,31 @@
+<!--<ion-view>-->
+  <!--<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">-->
+    <!--<div class="tabs">-->
+      <!--<a class="tab-item" ng-click="tabShow()" ng-class="{active:!isClick}" href="javascript:;">-->
+        <!--选项一-->
+      <!--</a>-->
+      <!--<a class="tab-item" ng-click="tabShow()" ng-class="{active:isClick}"  href="javascript:;">-->
+        <!--选项二-->
+      <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</ion-view>-->
+
+<ion-view>
+  <ion-nav-title class=" prod-list-tab">
+    <span class="tab-item" ng-class="{true: 'active', false: ''}[isCur]" ng-click="showProd()">一</span><span class="tab-item" ng-click="showTrans()" ng-class="{true: '', false: 'active'}[isCur]">二</span>
+  </ion-nav-title>
+  <ion-content scroll="false">
+    <ion-content ng-show="isCur" >
+      <div class="prod-list prod-list-ex">
+        这是选项一
+      </div>
+    </ion-content>
+    <ion-content ng-hide="isCur" >
+      <div class="prod-list transfer-prod-list">
+        这是选项二
+      </div>
+    </ion-content>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,36 @@
+<ion-view view-title="签收历史" hide-tabs="true">
+  <ion-content class="qianshou-history">
+    <div class="qianshou-total">
+      <h4>{{signhistoryAll}}</h4>
+      <p>签收总额(元)</p>
+    </div>
+
+    <div class="order_by" ng-if="signhisList.length">
+      <a href="javascript:void (0)">时间<i></i></a>
+      <a href="javascript:void (0)">金额<i></i></a>
+    </div>
+
+    <div class="qianshou-detail">
+      <ul>
+
+        <li ng-repeat="signhisitem in signhisList">
+          <a href="javascript:void(0);" ng-click="chojump(signhisitem.txnStat,signhisitem.id)">
+            <div class="qianshou-detail-left">
+              <span>{{signhisitem.reqCustNm}}</span>
+              <span>{{cjs.initTimer(signhisitem.srcDueDt)}}</span>
+            </div>
+            <div class="qianshou-detail-right">
+              <span>{{cjs.formMoney(signhisitem.txnAmt)}}</span>
+              <span class="singn-in-ok" ng-if="signhisitem.txnStat=='10'">待签收</span>
+              <span class="singn-in-ok" ng-if="signhisitem.txnStat=='11'">已签收</span>
+              <span class="singn-in-err red" ng-if="signhisitem.txnStat=='12'">已驳回</span>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+
+  </ion-content>
+</ion-view>

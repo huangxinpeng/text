@@ -1,0 +1,55 @@
+<ion-view view-title="融资复核历史" hide-tabs="true">
+
+  <div class="mysubheader">
+    <span ng-class="{true:'active',flase:''}[isCur]" ng-click="showcheck()">融资待复核</span>
+    <i></i>
+    <span ng-class="{true:'',false:'active'}[isCur]" ng-click="showrevocation()">融资撤销待复核</span>
+  </div>
+
+  <ion-content scroll="false" class="zrang-check">
+
+    <!-- 转让待复核-->
+    <ion-content ng-show="isCur">
+
+      <div class="baoquanzrang-list">
+        <ul>
+          <li ng-click="jumpto('tab.rzcheckhistorydetail',{id:trfitem.id})" ng-repeat="trfitem in trfList">
+            <div class="left">
+              <div>{{trfitem.custNm}}</div>
+              <span>{{cjs.initTimer(trfitem.txnDt)}}</span>
+            </div>
+            <div class="right">
+              <div>{{cjs.formMoney(trfitem.disctAmt)}}</div>
+              <span ng-if="trfitem.appStat == '1'">已完成</span>
+              <span ng-if="trfitem.appStat == '2'">已退回</span>
+              <span ng-if="trfitem.appStat == '3'">已拒绝</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </ion-content>
+    <!-- 转让撤销待复核-->
+    <ion-content ng-hide="isCur">
+      <div class="baoquanzrang-list">
+        <ul>
+          <li ng-click="jumpto('tab.rzcheckhistorydetail',{id:revitme.id})" ng-repeat="revitem in revList">
+
+            <div class="left">
+              <div>{{revitem.custNm}}</div>
+              <span>{{cjs.initTimer(revitem.txnDt)}}</span>
+            </div>
+            <div class="right">
+              <div>{{cjs.formMoney(revitem.disctAmt)}}</div>
+              <span ng-if="revitem.appStat == '1'">已完成</span>
+              <span ng-if="revitem.appStat == '2'">已退回</span>
+              <span ng-if="revitem.appStat == '3'">已拒绝</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </ion-content>
+  </ion-content>
+
+

@@ -1,0 +1,46 @@
+<ion-view view-title="宝券融资" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-total-account">
+      <h4>{{TotalIsseAmt}}</h4>
+      <p>可融资总额(元)</p>
+      <div>预计实付利息(元) <i style="color: red;">{{tool.formMoney(RealInterestPayable)}}</i></div>
+    </div>
+    <div class="account-detail-list has-more-padding" style="margin-top: 2px">
+      <ul>
+        <li><i>预计应付利息</i><b>{{tool.formMoney(AntiInterestPayable)}}</b></li>
+        <li><i>利率优惠</i><b>95%</b></li>
+        <li><i>优惠后利息</i><b style="color: red;">{{tool.formMoney(PreferentialInterest)}}</b></li>
+        <li class="has-right-icon">
+          <i>抵扣金币</i>
+          <input placeholder="请输入金币" id="InputCoin" type="number" ng-model="mineCoin.coin" ng-keyup="InputCoin()" ng-focus="textAlignCenter()" ng-blur="textAlignRight()"/>
+        </li>
+      </ul>
+    </div>
+    <div class="baoquan-bianji">
+      <ul ng-repeat="baoquanInfoList in baoquanInfoLists">
+        <li><i>{{baoquanInfoList.drftNo}}</i></li>
+        <li>
+          <ol>
+            <li>
+              <h4 class="colorChange">{{tool.formMoney(baoquanInfoList.isseAmt)}}</h4>
+              <p>宝券金额(元)</p>
+            </li>
+            <li>
+              <h4 class="colorChange">5.3</h4>
+              <p>年化利率(%)</p>
+            </li>
+            <li>
+              <h4>{{baoquanInfoList.dueDays}}</h4>
+              <p>期限(天)</p>
+            </li>
+          </ol>
+        </li>
+        <li><i>融资金额</i><input type="number" placeholder="请输入金额" ng-keyup="InputRZMoney($index)" ng-model="initMoney[$index]"/></li>
+      </ul>
+    </div>
+    <div class="choose-proceeds-bank" ui-sref="tab.RZChooseBank">{{bankName}} <i></i></div>
+<!--tab.rongziLastStep-->
+    <button class="btn-next-step" ng-click="RZToNextBtn()">确定</button>
+  </ion-content>
+</ion-view>
+

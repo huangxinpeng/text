@@ -1,0 +1,28 @@
+<ion-view view-title="企业审核" hide-tabs="true">
+
+  <ion-content>
+    <div class="userlist-info">
+      <ul>
+
+        <li ng-repeat="item in histList">
+          <div>
+            <span class="left">{{item.custName}}</span>
+
+            <span class="right isreject" ng-if="item.authRst == '2'">已驳回</span>
+            <span class="right isok" ng-if="item.authRst == '1'">已同意</span>
+
+          </div>
+          <div>
+            <span class="left">{{cjs.initTimer(item.authTs)}}</span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!--上拉刷新-->
+    <ion-infinite-scroll  distance="0.5%" immediate-check="false" on-infinite="loadMore()"></ion-infinite-scroll>
+
+  </ion-content>
+
+</ion-view>

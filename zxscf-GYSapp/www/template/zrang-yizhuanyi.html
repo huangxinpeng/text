@@ -1,0 +1,44 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+  <div class="zrang-flow-path">
+    <ul>
+      <li><i></i><span>选择宝券</span></li>
+      <li><b></b></li>
+      <li><i class="yizhuanyi-xuanzegys-off"></i><span>选择供应商</span></li>
+      <li><b></b></li>
+      <li><i class="zhuanrangxinxi-off"></i><span>转让信息</span></li>
+    </ul>
+  </div>
+  <div class="zrang-keyongbaoquan">
+    <p>您的可用宝券总额(元)</p>
+    <h4>{{cjs.formMoney(ZrangCanUse)}}</h4>
+  </div>
+  <div class="rank-time-account">
+    <a href="javascript:void(0);" ng-click="timeSort()">时间<i ng-class="timeIconIsRotate ? 'rotateIcon': ''"></i></a>
+    <a href="javascript:void(0);" ng-click="acountSort()">金额<i ng-class="acountIconIsRotate ? 'rotateIcon': ''"></i></a>
+  </div>
+  <div class="keyongbaoquan-detail">
+    <ul>
+      <li ng-repeat="ZrangCorpBaoQuanList in ZrangCorpBaoQuanLists">
+        <a  ng-click="YZYChoooseGys(ZrangCorpBaoQuanList.id,ZrangCorpBaoQuanList.isseAmt,ZrangCorpBaoQuanList.drftNo,ZrangCorpBaoQuanList.dueDt,ZrangCorpBaoQuanList.dueDays)">
+          <div class="keyongbaoquan-detail-left">
+            <span>{{cjs.initTimer(ZrangCorpBaoQuanList.dueDt)}}</span>
+            <span>距到期日 <i>{{ZrangCorpBaoQuanList.dueDays}}</i> 天</span>
+          </div>
+          <div class="keyongbaoquan-detail-right">
+            <!--<span>{{cjs.formMoney(ZrangCorpBaoQuanList.isseAmt)}}</span>-->
+            <span ng-if="ZrangCorpBaoQuanList.isseAmt < 10000 ">0万</span>
+            <span ng-if="ZrangCorpBaoQuanList.isseAmt < 10000 "><b class="fr">{{cjs.formMoney(ZrangCorpBaoQuanList.isseAmt)}}</b></span>
+
+            <span ng-if="ZrangCorpBaoQuanList.isseAmt >= 10000 ">{{parseInt(ZrangCorpBaoQuanList.isseAmt / 10000)}}万</span>
+            <span ng-if="ZrangCorpBaoQuanList.isseAmt >= 10000 "><b class="fr">{{cjs.formMoney((ZrangCorpBaoQuanList.isseAmt / 10000 + '').split('.')[1])}}</b></span>
+            <i class="jiantou-right"></i>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  </ion-content>
+</ion-view>>

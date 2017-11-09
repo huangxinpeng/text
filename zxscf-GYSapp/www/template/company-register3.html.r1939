@@ -1,0 +1,156 @@
+<ion-view view-title="企业注册" hide-tabs="true">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button  class="back-text-hide">
+      <i class="HHS-tab-backicon"></i>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+ <ion-content class='companyregister3'>
+   <!--注册流程图-->
+   <div class='show_register'>
+     <!--图片-->
+     <ul class="show_image">
+       <li>
+         <i></i>
+         <span>企业基本信息</span>
+       </li>
+       <li>
+         <i></i>
+         <span>法人信息</span>
+        </li>
+       <li>
+         <i></i>
+         <span>管理员信息</span>
+       </li>
+     </ul>
+     <!--两条线-->
+     <div class="show_line">
+       <span></span>
+       <span></span>
+     </div>
+   </div>
+
+   <!--角色选择-->
+   <div class="actor">
+     <div ng-click="isnew()">
+      <span>新管理员</span>
+       <i style="background: url('./img/icon2.x/Choice2@2x.png')no-repeat center/18px 18px" ng-show="newadmin"></i>
+     </div>
+     <div ng-click="isold()">
+      <span>复用已有用户为管理员</span>
+       <i style="background: url('./img/icon2.x/Choice2@2x.png')no-repeat center/18px 18px" ng-hide="newadmin"></i>
+     </div>
+   </div>
+   <!--资料填写-->
+   <div class="company_info_three">
+     <ul class="">
+      <li class=" cp_info_adrin">
+        <label>
+          <span>姓名</span>
+          <input type="text">
+        </label>
+      </li>
+       <li ng-if="newadmin">
+         <label>
+           <span>电子邮箱</span>
+           <input type="text">
+         </label>
+       </li>
+      <li class=" cp_info_idcard">
+        <label>
+          <span>身份证号码</span>
+          <input type="text">
+        </label>
+      </li>
+     </ul>
+   </div>
+
+   <!--证件照片-->
+    <div class='text_info'>请您上传证件照片</div>
+    <div id="get_picture_admin">
+        <ul>
+            <li ng-click="picture('0')">
+              <image ng-src="../img/test_img/test01.jpg" class="reg3_prosadmin"></image>
+              <!--遮罩层-->
+              <div class="upload_picture" ng-show="isImage0">
+                <div class="shade"></div>
+                <div class="plus_picture">
+                  <i class="icon ion-ios-plus"></i>
+                  <div>身份证正面</div>
+                </div>
+              </div>
+            </li>
+            <li ng-click="picture('1')">
+              <image ng-src="../img/test_img/test02.jpg" class="reg3_consadmin"></image>
+              <!--遮罩层-->
+              <div class="upload_picture" ng-show="isImage1">
+                <div class="shade"></div>
+                <div class="plus_picture">
+                  <i class="icon ion-ios-plus"></i>
+                  <div>身份证反面</div>
+                </div>
+              </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--管理员注册-->
+    <div class="admin_register">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <span>手机号码</span>
+                <input type="text" placeholder="13100429825">
+            </label>
+            <label class="item item-input">
+                <span>验证码</span>
+                <input type="text">
+                <div id="get_msgcode">获取验证码</div>
+            </label>
+            <label class="item item-input" ng-show="newadmin">
+                <span>密码</span>
+                <input type="text" placeholder="******">
+            </label>
+            <label class="item item-input" ng-show="newadmin">
+                <span>确认密码</span>
+                <input type="text" placeholder="******">
+            </label>
+        </div>
+    </div>
+
+    <!--管理员委托书照片-->
+    <div class='text_info'>请您上传授权委托书照片
+        <a ui-sref="#">委托授权书模板下载</a>
+    </div>
+    <div id="get_picture_proxy">
+        <div ng-click="picture('2')">
+          <!-- 实例相片-->
+          <image ng-src="../img/test_img/test01.jpg" class="reg3_proxy"></image>
+          <!--遮罩层-->
+          <div class="upload_picture" ng-show="isImage2">
+            <div class="shade"></div>
+            <div class="plus_picture">
+              <i class="icon ion-ios-plus"></i>
+              <p>委托书照片</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--同意-->
+      <div class="confirm">
+        <label class="checkbox">
+          <input type="checkbox">
+        </label>
+        <div class="readPD">
+          我已阅读<span>《E秒付平台用户注册与服务协议》</span>
+        </div>
+      </div>
+
+
+   <!--注册-->
+    <div class="nextpage" ui-sref="registersuccess">
+        <a>注册</a>
+    </div>
+
+ </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+  <div class="zrang-flow-path">
+    <ul>
+      <li><i class="duozhuanyi-jinbi"></i><span>输入金额</span></li>
+      <li><b></b></li>
+      <li><i class="xuanzebaoquan-off"></i><span>选择宝券</span></li>
+      <li><b></b></li>
+      <li><i class="zhuanrangxinxi-off"></i><span>转让信息</span></li>
+    </ul>
+  </div>
+    <div class="zrang-choose-zhuanru-company"><a ui-sref="tab.DZYChooseGYS">
+      {{DYZBaoQuanArray.corpName}}<i></i></a>
+    </div>
+    <span class="zhuanrangzhong">请输入转让金额</span>
+    <div class="zrang-import-amount">
+      <input class="import-amount" type="number" ng-model="DZYInput.amount" ng-keyup="DZYIputJugeAmount()"/>
+      <span>元</span>
+    </div>
+    <div class="zrang-canuse-amount">
+
+      <a>您可用金额<span>{{tool.formMoney(restSum)}}</span>元</a>
+      <!--<b ng-click="ZRallMoney()">全部转出</b>-->
+    </div>
+    <!-- tab.DZYxuanzebaoquan-->
+    <button ng-class="canBeClick.hasCorp == true && canBeClick.hasAmount == true ? '' : 'disabled'" ng-click="DZYToNextStepBtn()" class="btn-next-step">
+      下一步
+    </button>
+
+  </ion-content>
+
+</ion-view>>

@@ -1,0 +1,35 @@
+<ion-view view-title="宝券转让" hide-tabs="true">
+  <ion-content>
+    <div class="zrang-flow-path">
+      <ul>
+        <li><i></i><span>选择宝券</span></li>
+        <li><b class="xuanzebaoquan-line2"></b></li>
+        <li><i class="yizhuanyi-xuanzegys-on"></i><span style="color: #1093f4">选择供应商</span></li>
+        <li><b></b></li>
+        <li><i class="zhuanrangxinxi-off"></i><span>转让信息</span></li>
+      </ul>
+    </div>
+    <div class="zrang-baoquan-total">
+      <p>可转让宝券金额(元)</p>
+      <h4>{{cjs.formMoney(ZrangCorpBaoQuanList.isseAmt)}}</h4>
+    </div>
+    <div class="account-detail-list">
+      <ul>
+        <li><i>宝券余额</i><b class="dif-color">{{cjs.formMoney(ZrangCorpBaoQuanList.isseAmt)}}</b></li>
+        <li><i>到期日</i><b>{{cjs.initTimer(ZrangCorpBaoQuanList.dueDt)}}</b></li>
+        <li><i>距到期日</i><b>{{ZrangCorpBaoQuanList.dueDays}}天</b></li>
+        <li><i>转出单号</i><b>{{ZrangCorpBaoQuanList.drftNo}}</b></li>
+      </ul>
+    </div>
+    <div class="zrang-choose-GYS">
+      <span>供应商</span>
+      <input disabled type="text" placeholder="请选择供应商" ng-model="ZRcompany.corpName"/>
+      <a ui-sref="tab.YZYChoosegys"></a>
+    </div>
+<!--ui-sref="tab.YZYLastStep" ZrangCorpBaoQuanList.isseAmt,ZrangCorpBaoQuanList.isseAmt,ZrangCorpBaoQuanList.dueDt,ZrangCorpBaoQuanList.dueDays,ZrangCorpBaoQuanList.drftNo-->
+    <button ng-class="canBeClick ? 'disabled' : ''" ng-click="ToYZYLastStepBtn(ZrangCorpBaoQuanList.isseAmt,ZrangCorpBaoQuanList.dueDt,ZrangCorpBaoQuanList.dueDays,ZrangCorpBaoQuanList.drftNo)" class="btn-next-step" style="margin-top: 55px">
+      下一步
+    </button>
+  </ion-content>
+</ion-view>>
+

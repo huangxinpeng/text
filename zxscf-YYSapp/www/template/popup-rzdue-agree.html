@@ -1,0 +1,12 @@
+<div class="popup-rzacceptAgree">
+  <div class="myTitle">融资到期</div>
+  <div class="myPop">提示：如您确认兑付该宝券，请进行身份验证。</div>
+  <div class="yanzheng">
+    <input type="number" placeholder="短信验证" ng-model="input.MsgCode"/>
+    <a href="javascript:;" ng-click="getMsgcode()">{{messageinfo}}</a>
+  </div>
+  <div id="pop_btn">
+    <span ng-click="giveout()">取消</span>
+    <span ng-click="makesure()">确定</span>
+  </div>
+</div>

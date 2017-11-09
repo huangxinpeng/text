@@ -1,0 +1,14 @@
+<div class="popup-qianshou">
+  <div class="myTitle">宝券转让申请</div>
+  <div class="myPop">提示：如您确认转让该宝券，请进行身份验证。</div>
+
+  <div class="yanzheng">
+    <input ng-model="msCode.num" type="text" placeholder="短信验证"/>
+    <a href="javascript:void(0);" ng-click="getMsgcode()">{{getMessageInfo}}</a>
+  </div>
+
+  <div class="my_btn">
+    <span ng-click="giveout()">取消</span>
+    <span ng-click="makesure()">确定</span>
+  </div>
+</div>
