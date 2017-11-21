@@ -1,0 +1,157 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/jiabao_pingdao.png" alt="">
+        <div class="col-sm-3">
+            <span class="spanTitle">我的宝券><a href="javascript:;" alt="">宝券加保</a></span>
+            <span class="spanNote">您在此页面可对企业持有宝券加保</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容查询条件等，不是所有页面都有-->
+<!--<div class="contentQuery">
+
+</div>-->
+
+<!--主体内容明细部分-->
+<div id="main" class="contentDetailNew">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>加保信息</span>
+    </div>
+    <div class="contentMain">
+        <div class="confirmInfo">
+            <div class="oneItem">
+                <label>加保金额（元）</label>
+                <span id="txnAmt"></span>
+            </div>
+            <div class="oneItem">
+                <label>应付费用（元）</label>
+                <span id="txnFee"></span>
+            </div>
+            <div class="oneItem">
+                <label>抵扣（元）</label>
+                <span id="useBouns"></span>
+
+            </div>
+            <div class="oneItem">
+                <label>实付费用（元）</label>
+                <span id="payAmt"></span>
+            </div>
+        </div>
+    </div>
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>宝券信息</span>
+    </div>
+    <div class="contentMain">
+        <div id="drftInfoE">
+            <div class="drftInfo">
+                <div class="oneItem">
+                    <label>宝券编号</label>
+                    <span class="srcDrftNo"></span>
+                </div>
+                <div class="oneItem">
+                    <label>宝券金额（元）</label>
+                    <span class="validAmt"></span>
+                </div>
+                <div class="oneItem">
+                    <label>距到期日</label>
+                    <span class="dutDt"></span>
+                </div>
+                <div class="oneItem">
+                    <label>年化费率（%）</label>
+                    <span class="fee"></span>
+
+                </div>
+                <div class="oneItem">
+                    <label>费用金额（元）</label>
+                    <span class="feeAmt"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label class="">加保机构：</label>
+            <input hidden id="brCode"></input>
+            <input type="text" id="brName" disabled>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button id="preStep" class="back btn btn-primary fr">上一步</button>
+            </div>
+            <div class="col-sm-6">
+                <button id="nextStep" class="confirm btn btn-primary fl">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 构造弹窗确认签收 -->
+<div class="modal mytaskModalA" id="ConfConfirm">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">宝券加保</h4>
+            </div>
+            <div class="modal-body">
+                <div class="my_signContent">
+                    <form class="form-horizontal" id="grxxformFir" onsubmit="return false">
+                        <div class="form-group">
+                            <p class="col-sm-10">如您确认宝券加保，请进行身份验证并签署下述协议。</p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <input id="smsCode" type="text" class="form-control" placeholder="短信验证码">
+                            </div>
+                            <input type="button" value="获取验证码" id="sendSmsCode" class="col-sm-3 valid btn" />
+                        </div>
+                        <div class="form-group change-radio">
+                            <div class="col-sm-1 readmsg">
+                                <div class="read">
+                                    <label for="read"></label>
+                                    <input type="radio" name="read" id="read">
+                                    <div class="user-defined">
+                                        <span class="circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-10">
+                                <span class="read-agree">我已认真阅读并同意接受<a id="applicationGuide">《宝券加保申请人须知》</a>的全部内容</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmBtn" type="button" class="btn btn-primary confirmFir">确定</button>
+                <button type="button" class="btn btn-default cancelFir" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--协议-->
+<div class="modal protocolModal" tabindex="-1" role="dialog" id="protocolModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">宝券加保申请人须知</h4>
+            </div>
+            <div class="modal-body">
+                <div style="border: 1px solid #ccc;border-radius: 4px;padding:4px;">
+                    <div class="protocolWrap scrollbar">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="success" class="contentDetailNew">
+    <img src="../../images/index/chenggong.png">
+    <span>加保成功</span>
+    <span>恭喜！您的宝券加保申请已提交成功</span>
+    <button id="successReturn" class="btn btn-primary">确定</button>
+</div>

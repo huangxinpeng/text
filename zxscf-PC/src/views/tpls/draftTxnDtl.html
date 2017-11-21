@@ -1,0 +1,234 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-zhuanzhang" style="font-size:22px;"></i>
+        </div>
+        <div class="col-sm-11">
+            <span class="spanTitle">待办任务&gt;宝券转让&gt;<i id="txnType"></i>&gt;<a href="javascript:;" >宝券信息</a></span>
+            <span class="spanNote"></span>
+        </div>
+    </div>
+</div>
+<!--主体内容明细部分-->
+<div id="main" class="contentDetailNew" style="margin-bottom:20px;">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <div class="drftDetail">
+            <label>宝券编号</label>
+            <span id="srcDrftNo"></span>
+        </div>
+    </div>
+
+    <div class="contentMain">
+        <hr>
+        <div class="drftInfo" style="border:none;margin-left:15px;padding:0;">
+            <div class="oneItem">
+                <label>申请日期</label>
+                <span id="txnDt"></span>
+            </div>
+            <div class="oneItem">
+                <label>转入方</label>
+                <span id="rcvCustNm"></span>
+            </div>
+
+            <div class="oneItem">
+                <label>距到期日</label>
+                <span id="dueDays"></span>
+
+            </div>
+            <div class="oneItem kdf">
+                <label>开单方</label>
+                <span id="drwrNm"></span>
+
+            </div>
+            <div class="oneItem">
+                <label>经办人</label>
+                <span id="appUsrNm"></span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group drftCommonStyle" style="padding-bottom: 1px;">
+            <div class=" col-sm-12">
+                <span id="txnAmt" class="fr"></span>
+                <label class="control-label fr">转让金额</label>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="btn" class="row">
+    <div class="col-sm-12" style="text-align:center;">
+        <button id="appr" class="confirm btn">确认复核</button>
+        <button id="retract" class="confirm btn">撤销</button>
+        <button id="cancel" class="reject btn">驳回</button>
+    </div>
+</div>
+
+<!-- 构造弹窗确认签收 -->
+<div class="modal fade mytaskModalA" id="my_confirmSign">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="my_signContent">
+                    <form class="form-horizontal" id="grxxformFir" onsubmit="return false">
+                        <div class="form-group">
+                            <p class="col-sm-10"></p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <input id="smsCode" type="text" class="form-control input-valid " placeholder="短信验证码">
+                            </div>
+                            <input type="button" value="获取验证码" id="sendSmsCode" class="col-sm-3 valid btn" />
+                        </div>
+                        <div class="form-group change-radio">
+                            <div class="col-sm-1 readmsg">
+                                <div class="read">
+                                    <label for="read"></label>
+                                    <input type="radio" name="read" id="read">
+                                    <div class="user-defined">
+                                        <span class="circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-10">
+                                <span class="read-agree">我已认真阅读并同意接受<a>《晨蜂金融平台宝券应收账款债权转让协议》</a>及<a>《债权转让通知》</a>的全部内容。</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="apprBtn" type="button" class="btn btn-primary confirmFir">确定</button>
+                <button type="button" class="btn btn-default cancelFir" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- 构造弹窗驳回 -->
+<div class="modal fade mytaskModalA" id="rejectModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title">宝券转让驳回</h4>
+            </div>
+            <div class="modal-body">
+                <div class="my_rejectContent">
+                    <!--<div class="contentDetailNew">-->
+                    <form class="form-horizontal rejectContent" id="grxxform" onsubmit="return false">
+                        <div class="form-group">
+                            <!--<label class="col-sm-4 control-label"><span class="span-star">*&nbsp;</span>验证码</label>-->
+                            <div class="">
+                                <i></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <p>您是否确认驳回以上宝券转让？请选择驳回原因：</p>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-8">
+                                <div class="back">
+                                    <div class="info">
+                                        <label for="info"></label>
+                                        <input type="radio" name="back" id="info">
+                                        <div class="user-defined">
+                                            <span class="circle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="back">
+                                    <div class="other">
+                                        <label for="other"></label>
+                                        <input type="radio" name="back" id="other">
+                                        <div class="user-defined">
+                                            <span class="circle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="canlBtn" class="btn btn-primary confirmFir">确定</button>
+                <button type="button" class="btn btn-default cancelFir" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!--驳回成功小提示-->
+<div class="rejectTips">
+    <div class="rejectTipsTxt">驳回成功！</div>
+</div>
+
+<div id="success" class="contentDetailNew">
+    <img src="../images/index/chenggong.png">
+    <span id="tipSucc"></span>
+    <span id="contentSuccOne">您已完成<span id="amtSuccOne"></span>元的宝券转让复核！</span>
+    <span id="contentSuccTwo">当前宝券编号为<span id="drftNoSucc"></span>，宝券金额为 <span id="amtSucc"></span>的转让申请撤销已复核成功！</span>
+    <button id="successReturn" class="btn btn-primary">确定</button>
+</div>
+
+<!--通知-->
+<div class="modal fade protocolModal" tabindex="-1" role="dialog" id="noticeModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">债权转让通知</h4>
+            </div>
+            <div class="modal-body">
+                <div style="border: 1px solid #ccc;border-radius: 4px;padding:4px;">
+                    <pre class="protocolContent" style="width:100%;
+                                background-color: #fff;border:none;border-radius:0;
+                                white-space:pre-wrap;padding: 10px 20px;
+                                margin: 0;word-wrap: break-word;">中兴通讯股份有限公司：
+
+&nbsp;&nbsp;贵司（作为开券人）已开具编号为<span id="drftNoNotice"></span>的宝券（金额为人民币<span class="txnAmtCnNotice"></span>万元，小写：<span class="txnAmtNotice"></span>）。我司作为该宝券的合法持有人，根据晨蜂金融平台的业务规则和指引，现将该宝券项下对贵司的债权（金额为人民币<span class="txnAmtCnNotice"></span>万元，小写：<span class="txnAmtNotice"></span>）及其相关权利通过晨蜂金融平台转让予<span class="rcvCustNmNotice"></span>，请贵司向<span class="rcvCustNmNotice"></span>履行该宝券项下的义务。
+
+&nbsp;&nbsp;如无特别说明，本《债权转让通知》中用语与《晨蜂金融平台用户注册与服务协议》中用语含义保持一致。
+
+
+<span class="fr" id="reqCustNmNotice"></span>
+<span class="fr" id="txnDtNotice"></span>                            
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--协议-->
+<div class="modal fade protocolModal" tabindex="-1" role="dialog" id="protocolModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">晨蜂金融平台宝券应收账款债权转让协议</h4>
+            </div>
+            <div class="modal-body">
+                <div style="border: 1px solid #ccc;border-radius: 4px;padding:4px;">
+                    <div class="protocolWrap scrollbar">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>融资待复核</title>
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../css/reset.css">
+      <link rel="stylesheet" type="text/css" href="../css/financing.css">
+</head>
+<body>
+     <div class="container headers" >
+           <h3 id="financeAmount "></h3>
+           <p>融资金额（元）</p>
+     </div>
+     <div class=" nav-Speed">
+          <ul class="list">
+                <li class="item clearfix" >
+                      <label class="pull-left">资金方</label>
+                      <span class="pull-right" id="openUnilaterally"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">宝券编号</label>
+                      <span class="pull-right" id="vouchersNum"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">融资类型</label>
+                      <span class="pull-right" id="financeType"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">申请时间</label>
+                      <span class="pull-right" id="ApplyForTime"></span>
+                </li>
+          </ul>
+     </div>
+
+      <div class="finProgress">
+        融资详情
+      </div>
+     <div class=" nav-Speed">
+          <ul class="list">
+                <li class="item clearfix" >
+                      <label class="pull-left">融资天数</label>
+                      <span class="pull-right" id="days"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">年华利率</label>
+                      <span class="pull-right" id="rates"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">优惠折扣</label>
+                      <span class="pull-right" id="discount"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">金币折扣</label>
+                      <span class="pull-right" id="goldDiscount"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">应付利息</label>
+                      <span class="pull-right " id="interestPayable"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">实付利息</label>
+                      <span class="pull-right " id="realInterest"></span>
+                </li>
+                <li class="item clearfix">
+                      <label class="pull-left">实收金额</label>
+                      <span class="pull-right " id="amount"></span>
+                </li>
+          </ul>
+     </div>
+</body>
+</html>
+<!-- base-js-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery.json-2.4.js"></script>
+<script src="../js/bootstrapValidator.min.js"></script>
+<!--ifs-js-->
+<script src="../js/global.js"></script>
+<script src="../js/ifs/ifs-router-config.js"></script>
+<script src="../js/ifs/ifs-router.js"></script>
+<script src="../js/ifs/ifs-config.js"></script>
+<script src="../js/ifs/ifs-regular.js"></script>
+<script src="../js/ifs/ifs-ajax.js"></script>
+<script src="../js/common.js"></script>
+<!--biz-js -->
+<script type="text/javascript" src="../js/biz/draftDisctDtl.js"></script>

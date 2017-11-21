@@ -1,0 +1,72 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-gold"></i>
+        </div>
+
+        <div class="col-sm-3">
+            <span class="spanTitle">金币<a href="javascript:;" ></a></span>
+            <span class="spanNote">用户在线收益统计</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容查询条件等，不是所有页面都有-->
+<div class="contentQuery">
+    <span class="totalAmtLabel">金币总额</span>
+    <label id="totalBonus" class="totalAmt">0.00</label>
+    <div class="fr myCoinsHeader">
+        <div class="fl">
+            <p id="usbBonus">0.00</p>
+            <span>可用余额</span>
+        </div>
+        <div class="fr">
+            <p id="frzBonus">0.00</p>
+            <span>冻结金额</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div id="main" class="contentDetail2">
+    <div class="head">
+        <div class="contentListTitle jbsy">
+            <button id="sy" class="btnActive">收益</button><span id="earned">收益总额：0.00</span>
+            <button id="wrz" class="btnDefault">未入账</button><span id="earning" style="display:none;">未入账总额：0.00</span>
+        </div>
+        <div class="contentMain">
+            <table class="table myCoinsTable" rules="cols" style="border:1px solid #efefef;">
+                <thead>
+                    <tr>
+                        <th>交易日期</th>
+                        <th>宝券编号</th>
+                        <th>金额(元)</th>
+                        <th dic-type="133">来源</th>
+                        <th>收益(元)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="noDataTip">无可用数据!</div>
+            <div id="page">
+                <ul>
+                    <li><button id="firstPage">首页</button></li>
+                    <li><button id="prePage">上一页</button></li>
+                    <li><span id="pageInfo"><span id="pageIndex"></span>页/<span id="totalPage"></span>页</span>
+                    </li>
+                    <li><button id="nextPage">下一页</button></li>
+                    <li><button id="lastPage">尾页</button></li>
+                </ul>
+                <span id="eachPage">每页显示条数
+                    <select id="pageSize">
+                        <option value=2 selected>10</option>
+                        <option value=3>15</option>
+                        <option value=4>20</option>
+                        <option value=5>25</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+    </div>

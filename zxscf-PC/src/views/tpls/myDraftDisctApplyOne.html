@@ -1,0 +1,103 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/rongzi_pingdao.png" alt="">
+        <div class="col-sm-3">
+            <span class="spanTitle">我的宝券><a href="javascript:;" alt="">宝券融资</a></span>
+            <span class="spanNote">您在此页面可编辑您需要融资的金额</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetailNew">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>融资信息</span>
+    </div>
+    <div class="contentMain">
+        <div class="disctInfo">
+            <div class="oneItem">
+                <label>可融资总额（元）</label>
+                <span id="totalDisctAmt"></span>
+            </div>
+            <div class="oneItem">
+                <label>预计应付利息（元）</label>
+                <span id="dcInterest"></span>
+            </div>
+            <div class="oneItem">
+                <label>利率优惠（%）</label>
+                <span id="rateDisct"></span>
+
+            </div>
+            <div class="oneItem">
+                <label>优惠后利息（元）</label>
+                <span id="rateInterest"></span>
+            </div>
+            <div class="oneItem">
+                <label>抵扣（元）</label>
+                <input id="useBouns"></input>
+            </div>
+            <div class="oneItem">
+                <label>预计实付利息（元）</label>
+                <span id="rcInterest"></span>
+            </div>
+        </div>
+    </div>
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>融资明细</span>
+    </div>
+    <div class="contentMain">
+        <div id="drftInfo">
+            <div class="disctDrftInfo">
+                <div class="oneItem">
+                    <label>宝券编号</label>
+                    <span class="srcDrftNo"></span>
+                </div>
+                <div class="oneItem">
+                    <label>宝券金额（元）</label>
+                    <span class="validAmt"></span>
+                </div>
+                <div class="oneItem">
+                    <label>距到期日（天）</label>
+                    <span class="srcDueDt"></span>
+
+                </div>
+                <div class="oneItem">
+                    <label>年化费率（%）</label>
+                    <span class="intrate"></span>
+
+                </div>
+                <div class="oneItem">
+                    <label>融资金额（元）</label>
+                    <input class="disctAmt"></input>
+                </div>
+            </div>
+        </div>
+
+        <div class="bankInfo">
+            <label>收款账号：</label>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div id="change">
+
+                    </div>
+                    <i id="dropdown-click"></i>
+                </a>
+                <ul class="dropdown-menu">
+
+                </ul>
+            </li>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <button id="preStep" class="back btn btn-primary fr">上一步</button>
+            </div>
+            <div class="col-sm-6">
+                <button id="nextStep" class="confirm btn btn-primary fl">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>

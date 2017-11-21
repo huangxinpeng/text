@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* Reset css*/
+html,body{
+  width:100%;
+  margin:0 auto;
+  background-color: #f4f5f7;
+  font-family:"PingFangSC-Regular";
+}
+body{
+  position:relative;
+  height:100%;
+}
+h1,h2,h3,h4,h5,h6,div,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53}
+/*body{_overflow:auto;margin:0 auto;}*/
+/*html{_overflow:hidden}*/
+h1,h2,h3,h4,h5,h6{font-size:100%}
+address,cite,dfn,em,var,i{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+small{font-size:12px}
+ul,ol,li,dl,dt,dd{list-style:none}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font:12px/1.5 tahoma,arial,sans-serif; vertical-align:middle;cursor:pointer}
+table{border-collapse:collapse;border-spacing:0}
+.clear{content:"";display:table;float:none;clear:both;overflow:hidden;visibility:hidden;width:0;height:0;background:none;border:0;font-size:0}
+.fl{float:left;}
+.fr{float:right;}
+
+a{ text-decoration:none; color:#555;}
+a:hover{text-decoration:none; color:#ff6600;}
+
+/*title*/
+/*h1 { font-size:50px;}*/
+/*h2 { font-size:40px;}*/
+/*h3 { font-size:30px;}*/
+/*h4 { font-size:14px;}*/
+/*h5 { font-size:12px;}*/
+/*h6 { font-size:9px;}*/
+
+
+/*下拉刷新上拉加载样式*/
+.swiper-wrapper .transferPendingReview{
+  color: #1094f5;
+}
+.swiper-wrapper .transferToCancel{
+  color: #ff9f00;
+}
+.swiper-slide span{
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 0.0625rem;
+}
+.swiper-slide p{
+  font-size: 1.5rem;
+}
+.swiper-slide .zr-list span{
+}
+.swiper-slide .zr-list p{
+  color: #333;
+}
+.list-group{
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+.list-group-item{
+  position: relative;
+  display: block;
+  padding: 0.625rem 0.9375rem;
+  margin-bottom: 0.0625rem;
+  background-color: #fff;
+  border: 0.0625rem solid #ddd;
+  font-size:1.5rem;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.panel{
+  margin: 0;
+}
+.refreshtip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0.625rem 0;
+  text-align: center;
+  color: #999;
+  font-size:1.5rem;
+}
+.swiper-container{
+  /*overflow: visible;*/
+}
+.loadtip {
+  display: block;
+  width: 100%;
+  line-height: 3rem;
+  height: 3rem;
+  text-align: center;
+  color: #999;
+  border-top: 0.0625rem solid #ddd;
+  /*position:absolute;*/
+  /*bottom:0.125rem;*/
+  position:relative;
+  bottom:3rem;
+  font-size:1.5rem;
+}
+.swiper-container, .swiperWdt{
+  height: calc(100vh - 7.5rem);
+}
+.swiper-slide{
+  height: auto;
+}
+.text-center{
+  text-align: center;
+}
+
+/*无数据样式*/
+.noDataTip{
+  width:100%;
+  font-size:1.5rem;
+  text-align:center;
+  line-height:50rem;
+}

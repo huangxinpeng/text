@@ -1,0 +1,313 @@
+/*模态框居中*/
+.mytaskModalA .modal-dialog {
+  position: absolute;
+  width: auto;
+  margin: 10px auto;
+  right: 30%;
+  top: 25%;
+}
+.mytaskModalA .modal-dialog .modal-content {
+  width: 483px;
+  top: 45%;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-header .modal-title {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body {
+  text-align: center;
+  /*驳回模态框*/
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent {
+  text-align: left;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent p {
+  font-size: 12px;
+  color: #e71e1e;
+  margin-left: 39px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .ts {
+  margin-left: 39px;
+  font-size: 12px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .ts span {
+  margin-left: 0px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .ts span:nth-child(1) {
+  color: #e71e1e;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent input {
+  width: 225px;
+  margin-left: 39px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent input[type=button] {
+  width: 120px;
+  background: #1094f5;
+  color: white;
+  font-size: 12px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent label {
+  color: #666666;
+  text-align: right;
+  margin-top: 7px;
+  font-weight: normal;
+  margin-left: 4px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: -20px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown > a {
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  width: 295px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  padding-left: 10px;
+  color: #333333;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown > a #change {
+  display: inline-block;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown > a #change span {
+  margin-right: 6px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown > a #change .mrzh {
+  width: 36px;
+  height: 18px;
+  border-radius: 7px;
+  background-color: #f6a623;
+  color: #ffffff;
+  text-align: center;
+  line-height: 12px;
+  margin-bottom: 4px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown > a i {
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  background: url('../../../images/index/sanjiao-black.png') no-repeat center;
+  float: right;
+  margin-right: 10px;
+  margin-top: 14px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown .dropdown-menu {
+  width: 295px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  min-width: 90px;
+  padding: 0;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown .dropdown-menu li {
+  padding: 0px;
+  border: solid 1px #dddddd;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown .dropdown-menu li span {
+  margin-left: 10px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent .dropdown .dropdown-menu li .mrzh {
+  width: 36px;
+  height: 18px;
+  border-radius: 7px;
+  background-color: #f6a623;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 4px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .my_signContent button {
+  background-color: #1094f5;
+  color: #fff;
+  margin-left: 15px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .rejectContent {
+  margin-bottom: -15px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .rejectContent .form-group p {
+  text-align: left;
+  margin-left: 40px;
+  color: #666666;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-body .rejectContent .form-group i {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-left: 43%;
+  background: url('../../images/index/ico-sign01.png') no-repeat;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-footer {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -5px;
+  padding: 0;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-footer button {
+  width: 120px;
+  height: 32px;
+  color: #fff;
+  margin-right: 30px;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-footer .confirmFir,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .confirmFir:focus,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .confirmFir:hover,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .confirmFir:active {
+  background-color: #1094f5;
+  border: 1px solid  #1094f5;
+  color: #fff;
+}
+.mytaskModalA .modal-dialog .modal-content .modal-footer .cancelFir,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .cancelFir:hover,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .cancelFir:focus,
+.mytaskModalA .modal-dialog .modal-content .modal-footer .cancelFir:active {
+  background-color: #999;
+  border: 1px solid #999;
+  color: #fff;
+}
+.protocolModal .modal-dialog,
+.PDFModal .modal-dialog {
+  width: 70%;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 130px;
+  margin-left: -27%;
+}
+.protocolModal .modal-dialog .modal-content .modal-header,
+.PDFModal .modal-dialog .modal-content .modal-header {
+  text-align: center;
+}
+.protocolModal .modal-dialog .modal-content .modal-body,
+.PDFModal .modal-dialog .modal-content .modal-body {
+  padding: 10px;
+}
+.protocolModal .modal-dialog .modal-content .modal-body span,
+.PDFModal .modal-dialog .modal-content .modal-body span {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+.protocolModal .modal-dialog .modal-content .modal-body b,
+.PDFModal .modal-dialog .modal-content .modal-body b {
+  font-weight: bold;
+}
+.protocolModal .modal-dialog .modal-content .modal-body i,
+.PDFModal .modal-dialog .modal-content .modal-body i {
+  font-weight: bold;
+  margin-left: 10px;
+}
+.protocolModal .modal-dialog .modal-content .modal-body #pTable,
+.PDFModal .modal-dialog .modal-content .modal-body #pTable,
+.protocolModal .modal-dialog .modal-content .modal-body #drawTable,
+.PDFModal .modal-dialog .modal-content .modal-body #drawTable {
+  width: 430px;
+}
+.protocolModal .modal-dialog .modal-content .modal-body #pTable tr,
+.PDFModal .modal-dialog .modal-content .modal-body #pTable tr,
+.protocolModal .modal-dialog .modal-content .modal-body #drawTable tr,
+.PDFModal .modal-dialog .modal-content .modal-body #drawTable tr {
+  background-color: #ffffff;
+}
+.protocolModal .modal-dialog .modal-content .modal-body #pTable tr td,
+.PDFModal .modal-dialog .modal-content .modal-body #pTable tr td,
+.protocolModal .modal-dialog .modal-content .modal-body #drawTable tr td,
+.PDFModal .modal-dialog .modal-content .modal-body #drawTable tr td {
+  width: 215px;
+}
+/*以下是input的radio默认样式的修改*/
+.change-radio {
+  position: relative;
+}
+.change-radio .read-agree {
+  font-size: 12px;
+  color: #333;
+  width: 350px;
+  height: 40px;
+  margin-left: 20px;
+}
+.change-radio .read-agree a {
+  font-size: 12px;
+  color: #157df2;
+  cursor: pointer;
+}
+.change-radio .protocolTitle {
+  padding-left: 34px;
+}
+.change-radio .readmsg :before {
+  content: "";
+  display: table;
+}
+.change-radio .readmsg :after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.change-radio .readmsg > div {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 29px;
+  margin-top: -10px;
+}
+.change-radio .readmsg > div :last-child {
+  margin-right: 0;
+}
+.change-radio .readmsg label {
+  display: block;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.change-radio .readmsg input {
+  z-index: 3;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+  margin: auto;
+  width: 30px!important;
+  height: 30px;
+  cursor: pointer;
+}
+.change-radio .readmsg .user-defined {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 55px;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #157df2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.change-radio .readmsg .user-defined span.circle {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 1px;
+  margin-left: 1px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.change-radio .readmsg .user-defined span.active {
+  background-color: #157df2;
+}

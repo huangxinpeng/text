@@ -1,0 +1,87 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-ic_domain_black_px"></i>
+        </div>
+        <div class="col-sm-3">
+            <span class="spanTitle">企业信息><a href="javascript:;" alt="">企业资料</a></span>
+            <span class="spanNote">用户企业资料查看</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="infoGroup">
+        <div class="infoGroupTitle">
+            <h4>企业资料</h4>
+        </div>
+        <div class="infoGroupContent">
+            <ul class="eInfo">
+                <li>
+                    <h5>企业名称:</h5><span id="custCnNm"></span>
+                </li>
+                <li>
+                    <h5>企业证件类型:</h5><span dic-type="900003" id="idTyp"></span>
+                </li>
+                <li>
+                    <h5>所在城市:</h5><span id="regCity"></span>
+                </li>
+                <li>
+                    <h5>法定代表人:</h5><span id="lglPerNm"></span>
+                </li>
+                <li>
+                    <h5>企业证件号码:</h5><span id="idNo"></span>
+                </li>
+                <li>
+                    <h5>详细地址:</h5><span id="regAdr"></span>
+                </li>
+                <li>
+                    <h5>默认企业:</h5>
+                    <span>
+                        <span class="definedRadio">
+                            <input type="radio" id="radio0" name="defRecNo" value="1" />
+                            <label for="radio0" class="dot"></label>
+                        </span>
+                    <label for="">是</label>
+                    <span class="definedRadio">
+                            <input type="radio" disabled="disabled" id="radio1" name="defRecNo" value="0" />
+                            <label for="radio1" class="dot"></label>
+                        </span>
+                    <label for="">否</label>
+                    </span>
+                </li>
+
+            </ul>
+            <ul class="qualification">
+                <li>
+                    <h5><i class="icon iconfont icon-shenhe"></i>资质审核标志:</h5><span id="isAuth" dic-type="418018" class="status blue"></span>
+                </li>
+                <li>
+                    <h5><i class="icon iconfont icon-zhengshu"></i>数字证书:</h5><span id='isCert' class="status gray">未申请</span><a id="custDigitalCert" href="javascript:void(0);">去申请</a>
+                </li>
+                <li>
+                    <h5><i class="icon iconfont icon-qianyueshenqing"></i>用户协议:</h5><span id="isRegisterCust" class="status gray">未签约</span><a id="custSignProt" href="javascript:void(0);">去签约</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="infoGroup">
+        <div class="infoGroupTitle">
+            <h4>营业执照照片</h4>
+        </div>
+        <div class="infoGroupContent">
+            <ul class="yingyepic">
+                <li>
+                    <img id="pospic" src="../../images/index/nofront.png">
+                    <h3 id="post">正面</h3>
+                </li>
+                <li>
+                    <img id="negpic" src=" ../../images/index/noback.png">
+                    <h3 id="negt">反面</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

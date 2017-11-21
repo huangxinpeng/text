@@ -1,0 +1,103 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/zhuanrang_pingdao.png" alt="">
+        <div class="col-sm-11">
+            <span class="spanTitle">我的宝券>宝券转让>宝券一转多><a href="javascript:;" alt="">选择供应商</a></span>
+            <span class="spanNote">您在此页面须选择一个或多个签收宝券的供应商</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail" style="background-color:#ffffff;padding:35px 20px;">
+    <div class="procedureTxn">
+        <span id="one"><i>选择宝券</i></span>
+        <span id="two"><i>选择供应商</i></span>
+        <span id="three"><i>宝券拆分</i></span>
+        <span id="four"><i>转让结果</i></span>
+    </div>
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>选择供应商</span>
+    </div>
+
+    <div class="queryCust">
+        <input id="receiverNm" type="text" placeholder="请输入企业名称进行查询">
+        <button id="queryCustInfo" class="btn btn-primary">查询</button>
+    </div>
+
+    <div class="custNoDataTip">
+        <span>抱歉，没有查询到你所输入的企业名称，<a data-toggle="modal" data-target="#addOpponent">新增交易对手></a></span>
+    </div>
+
+    <div class="contentMain">
+        <table class="table" rules="cols" style="border:1px solid #eaf0f4;margin-bottom: 20px;">
+            <thead>
+                <tr>
+                    <th style="width:80px;">
+                        <span>
+                            <input  type="checkbox" id="checkAll">
+                            <label for="checkAll"></label>
+                        </span>
+                    </th>
+                    <th>企业名称</th>
+                    <th>交易次数</th>
+                    <th>最近交易时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="selectCust">
+            <label>已选择企业：</label>
+            <div class="selectCustName">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <button id="preStep" class="back btn btn-primary fr" style="background-color:#ffffff;color:#666666;">上一步</button>
+            </div>
+            <div class="col-sm-6">
+                <button id="nextStep" class="confirm btn btn-primary fl">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addOpponent" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增交易对手</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class=" col-md-offset-1 col-md-6">
+                        <input class="form-control" id="custName" type="text" placeholder="请输入企业完整名称" />
+                    </div>
+                    <div class="col-md-3">
+                        <button id="search" class="btn btn-block" type="button">查找</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <ul id="srchResult">
+                    <li></li>
+                </ul>
+                <div id="emptyPop">
+                    <i></i>抱歉，没有查找到你所输入的企业名称，<a href="#">通知管理员</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

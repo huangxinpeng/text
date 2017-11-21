@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="描述信息" />
+    <!--其他标签必须紧随其后-->
+    <title>蜜蜂金融供应链</title>
+
+    <!--图标-->
+    <!--<link rel="shortcut icon" href="../images/common/favicon.ico" />-->
+    <!--公用部分-->
+    <link href="../css/common/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="../fonts/iconfont.css" rel="stylesheet">
+    <link href="../css/common/base.css" rel="stylesheet">
+    <link href="../css/common/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../css/common/kkpager_green.css" rel="stylesheet">
+    <link href="../css/common/select2.css" rel="stylesheet">
+    <link href="../css/common/fileuploader.css" rel="stylesheet">
+    <link href="../js/uploadify/uploadify.css" rel="stylesheet">
+    <!--页面css-->
+    <link href="../css/index/commond.css" rel="stylesheet">
+    <link href="../css/index/my/myDraft.css" rel="stylesheet">
+    <link href="../css/index/myTask.css" rel="stylesheet">
+    <link href="../css/index/person/personalInfo.css" rel="stylesheet">
+    <link href="../css/index/person/doFeedback.css" rel="stylesheet">
+    <link href="../css/index/person/common.css" rel="stylesheet">
+    <link href="../css/index/enterprise/enterprise.css" rel="stylesheet">
+    <link href="../css/index/enterprise/bankaccounts.css" rel="stylesheet">
+    <link href="../css/index/busistadingbook/yewutaizhang.css" rel="stylesheet">
+    <link href="../css/index/newsRead.css" rel="stylesheet">
+    <link href="../css/index/myBonus.css" rel="stylesheet">
+    <link href="../css/index/modal.css" rel="stylesheet">
+    <link href="../css/index/todotask/todotask.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+    <script src="../js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--通用顶部-->
+    <div id="commonHeader">
+        <img src="../images/login/img/logo.png" style="width:150px;height:35px;">
+        <!--头像和消息部分-->
+        <div class="baseInfo fr">
+            <div class="login-info">
+                <span>登录账号：【<label id="loginAccount"></label>】</span>
+                <span>当前时间：【<label id="systemTime"></label>】</span>
+            </div>
+            <img id="usrImg" src="../images/index/nohead.png" alt="">
+            <div class="baseInfo-name">
+                <!--<b>乔治</b>
+                <i id="personInfoMenu" class=".icon-sanjiao-copy"></i>-->
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><span id="usrNm"></span>
+                        <i id="dropdown-click"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a id="personalInfo">个人资料</a></li>
+                        <li class="divider"></li>
+                        <li><a id="modifypwd">修改密码</a></li>
+                        <li><a id="modifymobile">修改手机</a></li>
+                        <li><a id="useHelp">使用帮助</a></li>
+                        <li><a id="doFeedback">我要反馈</a></li>
+                    </ul>
+                </li>
+            </div>
+            <!--消息提醒-->
+            <span class="news-warning active"><i style="display: none;"></i></span>
+            <img class="ind_iconlast" src="../images/index/ico-headerlast.png" alt="" />
+        </div>
+    </div>
+    <div class="main">
+        <!--左侧信息及工作台-->
+        <div class="controller">
+            <!--头像及各种信息-->
+            <div class="controller-info">
+                <!--<div class="user-img"></div>-->
+                <div class="user-name">
+                    <i id="curId" hidden></i>
+                    <i id="isRegister" hidden></i>
+                    <a id="curE" href="javascript:;">
+                    </a>
+                </div>
+                <div class="iscomplete-icon">
+                    <a title="资质审核未通过" href="javascript: void(0);"><i id="biaozhi"></i></a>
+                    <a title="数字证书未认证" href="javascript: void(0);"><i id="zhengshu"></i></a>
+                    <a title="用户协议未签约" href="javascript: void(0);"><i id="qianyue"></i></a> </div>
+                <div class="companyToggle"><a href="javascript:void(0);" id="changeE">切换企业</a></div>
+                <div class="mycontroller"><i></i><a id="workspace" href="javascript:void(0);">我的工作台</a></div>
+            </div>
+
+            <!--点击下拉列表-->
+            <div class="controller-nav">
+                <!--<ul class="ctrl-list">
+                    <li id="200001">
+                        <a href="javascript:;">待办任务<span id="point"></span><i class="icon iconfont icon-xiala"></i></a>
+                        <ol>
+                            <li>
+                                <a id="draftSign" href="javascript:;">
+                                    <i class="icon iconfont icon-ic_border_color_blac"></i><span>宝券签收</span><span class="badge">10</span></a>
+                            </li>
+                            <li class="">
+                                <a id="draftTxn" href="javascript:;">
+                                    <i class="icon iconfont icon-zhuanzhang"></i><span>宝券转让</span><span class="badge">1</span></a>
+                            </li>
+                            <li>
+                                <a id="draftDisct" href="javascript:;">
+                                    <i class="icon iconfont icon-jine"></i><span>宝券融资</span><span class="badge">9</span></a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="javascript:;">我的宝券<i class="icon iconfont icon-xiala"></i></a>
+                        <i></i>
+                        <ol>
+                            <li>
+                                <a id="myDraftQuery" href="javascript:;">
+                                    <i class="icon iconfont icon-sousuo" style="margin-right: 4px;"></i>
+                                    <span>宝券查询</span></a>
+                            </li>
+                            <li>
+                                <a id="myDraftTxn" href="javascript:;">
+                                    <i class="icon iconfont icon-zhuanzhang"></i><span>宝券转让</span></a>
+                            </li>
+                            <li>
+                                <a id="myDraftDisct" href="javascript:;">
+                                    <i class="icon iconfont icon-jine"></i><span>宝券融资</span></a>
+                            </li>
+                            <li>
+                                <a id="myDraftPay" href="javascript:;">
+                                    <i class="icon iconfont icon-ic_alarm_black_px"></i><span>宝券到期</span></a>
+                            </li>
+                            <li>
+                                <a id="myDraftConfirm" href="javascript:;">
+                                    <i class="icon iconfont icon-yanzheng"></i><span>宝券加保</span></a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a id="wodejinbi" href="javascript:;">我的金币</a>
+                        <i></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">企业信息<i class="icon iconfont icon-xiala"></i></a>
+                        <i></i>
+                        <ol>
+                            <li>
+                                <a id="custInfo" href="javascript:;">
+                                    <i class="icon iconfont icon-ic_domain_black_px"></i><span>企业资料</span></a>
+                            </li>
+                            <li>
+                                <a id="userMgt" href="javascript:;">
+                                    <i class="icon iconfont icon-kehu" style="margin-left: -2px;"></i><span>用户管理</span></a>
+                            </li>
+                            <li>
+                                <a id="bankAcct" href="javascript:;">
+                                    <i class="icon iconfont icon-zhanghao" style="font-size: 10px;margin-left: -4px;"></i><span>银行账号</span></a>
+                            </li>
+                            <li>
+                                <a id="partner" href="javascript:;">
+                                    <i class="icon iconfont icon-gongyingshang"></i><span>交易对手</span></a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="javascript:;">业务台账<i class="icon iconfont icon-xiala"></i></a>
+                        <i></i>
+                        <ol>
+                            <li>
+                                <a id="draftSignBook" href="javascript:;">
+                                    <i class="icon iconfont icon-ic_border_color_blac"></i><span>宝券签收台账</span></a>
+                            </li>
+                            <li>
+                                <a id="draftTxnBook" href="javascript:;">
+                                    <i class="icon iconfont icon-zhuanzhang"></i><span>宝券转让台账</span></a>
+                            </li>
+                            <li>
+                                <a id="draftDisctBook" href="javascript:;">
+                                    <i class="icon iconfont icon-jine"></i><span>宝券融资台账</span></a>
+                            </li>
+                            <li>
+                                <a id="draftPayBook" href="javascript:;">
+                                    <i class="icon iconfont icon-ic_alarm_black_px"></i><span>到期付款台账</span></a>
+                            </li>
+                            <li>
+                                <a id="myBonusBook" href="javascript:;">
+                                    <i class="icon iconfont icon-gold"></i><span>我的金币台账</span></a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="javascript:;">凭证下载<i class="icon iconfont icon-xiala"></i></a>
+                        <i></i>
+                        <ol>
+                            <li>
+                                <a id="draftTxnCert" href="javascript:;">
+                                    <i class="icon iconfont icon-zhuanzhang"></i><span>转让凭证</span></a>
+                            </li>
+                            <li>
+                                <a id="draftDisctCert" href="javascript:;">
+                                    <i class="icon iconfont icon-jine"></i><span>融资凭证</span></a>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+        <!--右侧相关数据显示-->
+        <div class="content ">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../js/require.js?v=APP_VER" data-main="../js/main"></script>
+
+<!-- 构造弹窗 -->
+<div class="modal fade mytaskModal" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">切换企业</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="listmodal">
+                    <!-- <li class=""><a href="index.html">万洲国际股份有限公司</a><span class="glyphicon glyphicon-ok"></span></li>
+                    <li class=""><a href="javascript:void(0);">中兴通讯财务有限公司</a><span class="glyphicon glyphicon-ok"></span></li>
+                    <li class=""><a href="javascript:void(0);">上海浦东发展银行股份有限公司</a><span class="glyphicon glyphicon-ok"></span></li> -->
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

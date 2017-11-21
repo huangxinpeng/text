@@ -1,0 +1,200 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-ic_all_inclusive_bla"></i>
+        </div>
+        <div class="col-sm-6">
+            <span class="spanTitle">待办任务><a href="javascript:;" alt="">宝券融资</a></span>
+            <span class="spanNote">您在此页面可处理宝券融资待复核与融资撤销待复核</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容查询条件等，不是所有页面都有-->
+<div class="contentQuery" id="query">
+    <span class="totalAmtLabel">待复核融资总额（元）</span>
+    <label id="apprTotalAmt" class="totalAmt"></label>
+    <a href="javascript:;" id="queryDisctHis" class="queryLink fr">查看融资复核历史</a>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail2" id="main">
+    <div class="head">
+        <div class="contentListTitle">
+            <button id="disctAppr">融资待复核</button>
+            <button id="disctRetrAppr">融资撤销待复核<span></span></button>
+        </div>
+        <div class="contentMain tblContent">
+            <table rules="cols" class="table" style="border:1px solid #efefef;">
+                <thead>
+                    <tr>
+                        <th style="width:80px;"><span><input type="checkbox" id="checkAll"><label for="checkAll"></label></span></th>
+                        <th>宝券编号</th>
+                        <th>融资金额</th>
+                        <th>实收金额</th>
+                        <th>实付利息</th>
+                        <th>到达日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="noDataTip">无可用数据!</div>
+            <div id="page">
+                <ul>
+                    <li><button id="firstPage">首页</button></li>
+                    <li><button id="prePage">上一页</button></li>
+                    <li><span id="pageInfo"><span id="pageIndex"></span>页/<span id="totalPage"></span>页</span>
+                    </li>
+                    <li><button id="nextPage">下一页</button></li>
+                    <li><button id="lastPage">尾页</button></li>
+                </ul>
+                <span id="eachPage">每页显示条数
+                    <select id="pageSize">
+                        <option value=1 selected>10</option>
+                        <option value=2>20</option>
+                        <option value=3>30</option>
+                        <option value=4>40</option>
+                        <option value=5>50</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="foot" id="disctApprBtn">
+        <div class="row ">
+            <div class="col-sm-6">
+                <button class="confirm btn btn-primary" id="appr">确认复核</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="back btn btn-primary" id="apprCanl">驳回</button>
+            </div>
+        </div>
+    </div>
+    <div class="foot" id="disctRetrApprBtn">
+        <div class="row ">
+            <div class="col-sm-6">
+                <button class="confirm btn btn-primary" id="retract">撤销</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="back btn btn-primary" id="retractCanl">驳回</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 构造弹窗融资复核 -->
+<div class="modal fade mytaskModalA" id="my_confirmSign">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="my_signContent">
+                    <form class="form-horizontal" id="grxxformFir" onsubmit="return false">
+                        <div class="form-group">
+                            <p class="col-sm-10"></p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <input id="smsCode" type="text" class="form-control input-valid " placeholder="短信验证码">
+                            </div>
+                            <input type="button" value="获取验证码" id="sendSmsCode" class="col-sm-3 valid btn" />
+                        </div>
+                        <div class="form-group change-radio">
+                            <div class="col-sm-1 readmsg">
+                                <div class="read">
+                                    <label for="read"></label>
+                                    <input type="radio" name="read" id="read">
+                                    <div class="user-defined">
+                                        <span class="circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-10">
+                                <span class="read-agree">我已认真阅读并同意接受<a>《晨蜂金融平台宝券商业保理融资协议》</a>及<a>《债权转让通知》</a>的全部内容</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="apprBtn" type="button" class="btn btn-primary confirmFir">确定</button>
+                <button type="button" class="btn btn-default cancelFir" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 构造弹窗融资待复核驳回 -->
+<div class="modal fade mytaskModalA" id="rejectModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">宝券融资驳回</h4>
+            </div>
+            <div class="modal-body">
+                <div class="my_rejectContent">
+                    <form class="form-horizontal rejectContent" id="grxxform" onsubmit="return false">
+                        <div class="form-group">
+                            <div class="">
+                                <i></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <p>您是否确认驳回以上宝券融资？请选择驳回原因：</p>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-8">
+                                <div class="back">
+                                    <div class="info">
+                                        <label for="info"></label>
+                                        <input type="radio" name="back" id="info">
+                                        <div class="user-defined">
+                                            <span class="circle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="back">
+                                    <div class="other">
+                                        <label for="other"></label>
+                                        <input type="radio" name="back" id="other">
+                                        <div class="user-defined">
+                                            <span class="circle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="canlBtn" class="btn btn-primary confirmFir">确定</button>
+                <button type="button" class="btn btn-default cancelFir" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--驳回成功小提示-->
+<div class="rejectTips">
+    <div class="rejectTipsTxt">驳回成功！</div>
+</div>
+
+<!--融资复核成功页面-->
+<div id="success" class="contentDetailNew">
+    <img src="../images/index/chenggong.png">
+    <span id="tipSucc"></span>
+    <span id="contentSuccOne">当前宝券编号为<span id="drftNoSuccOne"></span>,宝券金额为<span id="amtSuccOne"></span>的融资申请已复核成功！</span>
+    <span id="contentSuccTwo">当前宝券编号为<span id="drftNoSucc"></span>，融资金额为<span id="amtSucc"></span>的融资申请撤销已复核！</span>
+    <button id="successReturn" class="btn btn-primary">确定</button>
+</div>

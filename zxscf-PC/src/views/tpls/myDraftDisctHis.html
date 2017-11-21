@@ -1,0 +1,70 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/rongzi_pingdao.png" alt="">
+        <div class="col-sm-11">
+            <span class="spanTitle">我的宝券>宝券融资><a href="javascript:;" alt="">融资历史</a></span>
+            <span class="spanNote">您在此页面可查看所有的融资历史</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容查询条件等，不是所有页面都有-->
+<div class="contentQuery">
+    <span class="totalAmtLabel">已融资总额（元）</span>
+    <label id="sum" class="totalAmt"></label>
+    <label id="rateSum" class="rateAmtLabel fr"></label>
+    <span class="rateAmt fr">已付利息总额（元）</span>
+
+</div>
+
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>融资明细</span>
+    </div>
+
+    <div class="contentMain">
+        <table class="table" rules="cols" style="border:1px solid #eaf0f4;">
+            <thead>
+                <tr>
+                    <th hidden></th>
+                    <th>融资日期</th>
+                    <th>宝券编号</th>
+                    <th>宝券金额（元）</th>
+                    <th>实付利息</th>
+                    <th>放款金额</th>
+                    <th dic-type="124">状态</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="noDataTip">无可用数据!</div>
+        <div id="page">
+            <ul>
+                <li><button id="firstPage">首页</button></li>
+                <li><button id="prePage">上一页</button></li>
+                <li><span id="pageInfo"><span id="pageIndex"></span>页/<span id="totalPage"></span>页</span>
+                </li>
+                <li><button id="nextPage">下一页</button></li>
+                <li><button id="lastPage">尾页</button></li>
+            </ul>
+            <span id="eachPage">每页显示条数
+                <select id="pageSize">
+                    <option value=1 selected>10</option>
+                    <option value=2>20</option>
+                    <option value=3>30</option>
+                    <option value=4>40</option>
+                    <option value=5>50</option>
+                </select>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="returnBtn" class="return btn btn-primary">返回上级页面</button>
+            </div>
+        </div>
+    </div>

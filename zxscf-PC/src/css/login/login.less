@@ -1,0 +1,330 @@
+body,
+html {
+    height: 768px;
+    width: 100%;
+    position:relative;
+}
+.form-group{
+  margin-bottom:0;
+  position:relative;
+  .tip{
+    position:absolute;
+    top: 44px;
+    padding-left: 5px;
+    font-size: 12px;
+    display:none;
+    color: #e71e1e;
+  }
+}
+#SMSGroup{
+  display:none;
+}
+.SMSCheckTip,.loginCheckTip{
+  margin: 0;
+  display:none;
+  color: #e71e1e;
+}
+
+#myCarousel{
+    width: 100%;
+    height: 100%;
+    .carousel-inner{
+        width: 100%;
+        height: 100%;
+        .item{
+            width: 100%;
+            height: 100%; 
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+   
+    //左右箭头
+    .jiantou-right{
+        display: block;
+        width: 23px;
+        height: 40px;
+        background: url('../../images/login/img/right.png');
+        position: absolute;
+        right:75px;
+        top:300px;
+        cursor: pointer;
+    }
+    .jiantou-left{
+        display: block;
+        width: 23px;
+        height: 40px;
+        background: url('../../images/login/img/left.png');
+        position: absolute;
+        left:75px;
+        top:300px;
+        cursor: pointer;
+    }
+}
+
+
+.header{
+    width: 100%;
+    height: 60px;
+    opacity: 0.5;
+    background-color: #253238;
+    position: absolute;
+    left: 0;
+    top:0;
+    padding-top: 20px;
+    padding-left: 25px;
+    img {
+        margin-top: -5px;
+        width:128px;
+        height:32px;
+    }
+    span{
+        color: #ffffff;
+        text-align: left;
+        font-size: 18px;
+        margin-left: 35px;
+    }
+}
+
+.loginForm {
+    width: 370px;
+    //height: 383px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #d8d8d8;
+    position: absolute;
+    right: 118px;
+    top: 127px;
+    padding: 30px 35px;
+    margin-bottom: 70px;
+    .title{
+        vertical-align: middle;
+        padding-bottom: 30px;
+        hr{
+            width: 96px;
+            height: 2px;
+            color:#d8d8d8;
+            display: inline-block;
+            margin: 0px;
+            margin-bottom: 5px;
+        }
+        span {
+            display: inline-block;
+            &:nth-child(2),&:nth-child(4){
+                width: 6px;
+                height: 6px;
+                transform: rotate(45deg);
+                background-color: #d8d8d8;
+                margin-bottom: 4px;
+            }
+             &:nth-child(2){
+                margin-left: -3px;
+             }
+            &:nth-child(3){
+                width: 64px;
+                height:21px;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0 10px;
+            }
+            &:nth-child(4){
+                margin-right: -4px;
+            }
+
+        } 
+    }
+    // 表单
+    #userLogin {
+        input{
+            width:300px;
+            height: 40px;
+            opacity: 0.8;
+            border-radius: 2px;
+            border: solid 1px #d8d8d8;
+            margin-bottom: 25px;
+            color: #999999;
+            padding-left: 40px;
+            position: relative;
+        }
+        i{
+            font-size: 16px;
+            position: absolute;
+            left: 12px;
+            top: 9px;
+            color:#999999;
+            &:nth-child(2){
+                font-size: 18px;
+            }
+            &:nth-child(4){
+                top:157px;
+            }
+            &:nth-child(6){
+                top:223px;
+            }
+        } 
+        // 验证码
+        #checkNum,#checkSms {
+            width: 160px;
+        }
+       #sendSms{
+         width: 120px;
+         height: 40px;
+         background: #1094f5;
+         color: #fff;
+         font-size: 14px;
+         text-align: center;
+         line-height: 22px;
+         margin-left:13px;
+       }
+        #changeCheckNum {
+            width: 120px;
+            height: 40px;
+            float: right;
+            #imgCode {
+                display:block;
+                width: 100%;
+                height: 100%;
+                
+            }
+        }
+        #login {
+            width: 100%;
+            height: 40px;
+            background: #1094f5;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+    } //  注册和忘记密码
+    a {
+        display: block;
+        color: #2fa5ff;        
+    }
+    a:hover{
+        text-decoration: none;
+    }
+}
+
+.footer-nav {
+    position: absolute;
+    bottom: -0px;
+    width: 100%;
+    height: 140px;
+    opacity: 0.5;
+    background-color: #253238;
+    .footer-nav-top {
+        width: 100%;
+        height: 140px;    
+        .relation-message {
+            float: left;
+            padding:30px 0 40px 132px;
+            color: #ffffff;
+            font-size: 15px;
+            .kfrx {
+                height: 20px;
+                letter-spacing: -0.3px;
+                display: block;
+            }
+            .banquan {
+                letter-spacing: -0.1px;
+                height: 20px;
+                margin-top: 30px;
+            }
+        }
+        .download{
+            float: right;
+            margin: 45px 20px 45px 100px;  
+            height: 50px;
+            p{
+                letter-spacing: 0.4px;
+                line-height: 1.67;
+                color: #ffffff;
+                font-size: 15px;   
+            }
+        }
+        #erweima {
+            float: right;
+            margin-top: 17px;
+            margin-right: 105px;
+           
+            li {
+                float: left;
+                margin-right: 50px;
+                img {
+                    display: block;
+                    margin-bottom: 6px;
+                }
+                a {
+                    width: 100%;
+                    text-align: center;
+                    color:#ffffff;
+                    letter-spacing: 0.3px;
+                    font-size: 12px;
+                    span {
+                        display: inline-block;
+                        float: left;
+                        margin-right: 8px;
+                        margin-left: 10px;
+                    }
+                }
+                &:nth-child(1) {
+                    a {
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            background: url('../../images/login/img/iOS.png') no-repeat center;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    a {
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            background: url('../../images/login/img/android.png') no-repeat center;
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    a {
+                        // margin-left: -10px;
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            background: url('../../images/login/img/gongzhonghao.png') no-repeat center;
+                            margin-left: -20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#gAlertModal{
+  .modal-dialog{
+    margin-top: 240px;
+    left: 50%;
+    margin-left: -150px;
+    //border: solid 1px #979797;
+    border-radius: 2px;
+    width: 300px;
+    height: 51px;
+    opacity: 0.8;
+    .modal-content{
+      border:none;
+      opacity: 0.8;
+      .modal-body{
+        text-align: center;
+        font-size: 14px;
+        border-radius: 2px;
+        color: #ffffff;
+        background-color: #000000;
+        opacity: 0.8;
+      }
+    }
+  }
+}

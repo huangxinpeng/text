@@ -1,0 +1,107 @@
+.contentDetail .contentListTitle .bzfk {
+  color: #333333!important;
+  font-size: 14px!important;
+}
+.contentDetail .bgcolor {
+  background-color: #ffffff;
+}
+.contentDetail .contentMain #fknormal #helpC {
+  width: 484px;
+  height: 86px;
+  border-radius: 2px;
+  border: solid 1px #d8d8d8;
+  margin: 30px 0px 0px 90px;
+}
+.contentDetail .contentMain #fknormal textarea::-webkit-input-placeholder {
+  font-family: PingFangSC;
+  color: #999999;
+  text-align: left;
+  font-size: 14px;
+}
+.contentDetail .contentMain #fknormal .fontTip {
+  font-family: PingFangSC;
+  color: #999999;
+  font-size: 14px;
+  margin-left: -80px;
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  line-height: 13px;
+}
+.contentDetail .contentMain #fknormal #submit {
+  width: 120px;
+  height: 34px;
+  border-radius: 2px;
+  background-color: #1094f5;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 30px 90px;
+}
+.contentDetail .contentMain #fkerror,
+.contentDetail .contentMain #fksuccess {
+  text-align: center;
+  padding: 20px;
+}
+.contentDetail .contentMain #fkerror .fkimg,
+.contentDetail .contentMain #fksuccess .fkimg {
+  display: block;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+}
+.contentDetail .contentMain #fkerror .fktip,
+.contentDetail .contentMain #fksuccess .fktip {
+  color: #333333;
+  text-align: center;
+  font-size: 20px;
+  display: inline-block;
+}
+.contentDetail .contentMain .onefeedback {
+  width: 96%;
+  padding: 20px 0px 20px 20px;
+  display: inline-block;
+}
+.contentDetail .contentMain .onefeedback .question {
+  letter-spacing: -0.2px;
+  font-family: PingFangSC;
+  color: #333333;
+  display: block;
+  word-wrap: break-word;
+}
+.contentDetail .contentMain .onefeedback .feedback {
+  letter-spacing: -0.2px;
+  font-family: PingFangSC;
+  color: #1094f5;
+  display: inline-block;
+  margin-top: 5px;
+}
+.contentDetail .contentMain .onefeedback .answer {
+  letter-spacing: -0.2px;
+  font-family: PingFangSC;
+  color: #333333;
+  display: inline-block;
+  margin-top: 10px;
+}
+.contentDetail .contentMain .onefeedback .answer span {
+  margin-bottom: -10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  color: #1094f5;
+  background: no-repeat url("../../../images/index/kefu.png");
+}
+.contentDetail .contentMain .onefeedback .time {
+  margin-top: 15px;
+  font-family: PingFangSC;
+  color: #999999;
+  font-size: 12px;
+  float: right;
+}
+.contentDetail .contentMain .form-hr {
+  width: 1066px;
+  color: #eaf0f4;
+  margin: 0px;
+}

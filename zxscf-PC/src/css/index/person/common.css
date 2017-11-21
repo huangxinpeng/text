@@ -1,0 +1,159 @@
+.contentDetailNew .procedure {
+  height: 2px;
+  width: 896px;
+  background: #d9d9d9;
+  margin-top: 53px;
+  margin-left: 90px;
+  display: inline-block;
+}
+.contentDetailNew .procedure span {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: url('../../../images/index/1.png') no-repeat center;
+  margin-top: -18px;
+  margin-left: 150px;
+  margin-right: 90px;
+  position: relative;
+}
+.contentDetailNew .procedure span > i {
+  display: inline-block;
+  width: 75px;
+  text-align: center;
+  font-size: 12px;
+  color: #333333;
+  position: absolute;
+  left: -54%;
+  bottom: -28px;
+}
+.contentDetailNew .procedure span:nth-child(2) {
+  background: url('../../../images/index/2.png') no-repeat center;
+}
+.contentDetailNew .procedure span:nth-child(3) {
+  background: url('../../../images/index/3.png') no-repeat center;
+}
+.contentDetailNew .procedure .oneStep {
+  width: 52px;
+  height: 52px;
+  background: url('../../../images/index/1_check.png') no-repeat center;
+  top: 10px;
+  margin-top: -34%;
+}
+.contentDetailNew .procedure .oneStep > i {
+  left: -20%;
+  bottom: -20px;
+}
+.contentDetailNew .procedure .twoStep {
+  width: 52px;
+  height: 52px;
+  background: url('../../../images/index/2_check.png') no-repeat center !important;
+  top: 10px;
+  margin-top: -34%;
+}
+.contentDetailNew .procedure .twoStep > i {
+  left: -20%;
+  bottom: -20px;
+}
+.contentDetailNew .procedure .threeStep {
+  width: 52px;
+  height: 52px;
+  background: url('../../../images/index/3_check.png') no-repeat center !important;
+  top: 10px;
+  margin-top: -34%;
+}
+.contentDetailNew .procedure .threeStep > i {
+  left: -20%;
+  bottom: -20px;
+}
+.contentDetailNew #grxxform {
+  margin: 0 auto;
+  margin-top: 64px;
+}
+.contentDetailNew #grxxform .span-star {
+  color: #ff0000;
+  vertical-align: middle;
+}
+.contentDetailNew #grxxform .input-mobile {
+  width: 356px;
+}
+.contentDetailNew #grxxform .input-valid {
+  width: 216px;
+  display: inline-block;
+}
+.contentDetailNew #grxxform .valid {
+  color: #fff;
+  font-size: 12px;
+  height: 34px;
+  width: 120px;
+  background: transparent;
+  border-color: transparent;
+  background: #157df2;
+  margin-left: 15px;
+  margin-top: -3px;
+  display: inline-block;
+}
+.contentDetailNew #grxxform .next-step {
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  width: 120px;
+  height: 40px;
+  border-color: transparent;
+  background: #157df2;
+  text-align: center;
+  margin-left: 60px;
+}
+.contentDetailNew #grxxform .error_show {
+  display: block;
+  color: #ff0000;
+}
+.contentDetailNew #grxxform .error_hidden {
+  display: none;
+}
+.contentDetailNew #grxxform .rule {
+  border: 1px solid #99dd90;
+  font-size: 12px;
+  color: #56c547;
+  width: 300px;
+  padding: 7px 8px;
+  margin-left: 10px;
+  position: relative;
+  z-index: 100;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #d0f9ca;
+}
+.contentDetailNew #grxxform .rule .ruleTip {
+  float: left;
+  margin-left: -16px;
+}
+.contentDetailNew .resetSuccess {
+  margin: 0 auto;
+  margin-top: 64px;
+}
+.contentDetailNew .resetSuccess > img {
+  display: block;
+  width: 108px;
+  height: 108px;
+  margin: 0 auto;
+}
+.contentDetailNew .resetSuccess > span {
+  color: #333333;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 22px;
+}
+.contentDetailNew .resetSuccess > button {
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  width: 200px;
+  height: 40px;
+  background: transparent;
+  border-color: transparent;
+  background: #157df2;
+  margin: 0 auto;
+}

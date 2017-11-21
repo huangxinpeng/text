@@ -1,0 +1,162 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="item-content row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-ic_border_color_blac"></i>
+        </div>
+        <div class="col-sm-7"  id="title">
+            <span class="spanTitle">业务台账>宝券融资台账>融资信息>
+                <a href="javascript:;" alt="">宝券融资凭证</a></span>
+            <span class="spanNote">您在此页面可查看宝券融资台账的融资凭证信息且可以下载融资凭证</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="contentMain">
+        <div class="item">
+            <div class="item-title">
+                <h5>凭证编号<span name="srcDrftNo"></span></h5>
+                <div id="ldBtn"><i class="icon iconfont icon-xiazai"></i>下载融资凭证</div>
+            </div>
+            <div class="rongzicontent item-content">
+                <div class="row">
+                    <div class="col-sm-6 pl10">
+                        <label class="">融资人</label>
+                        <span name="custNm"></span>
+                    </div>
+                    <div class="col-sm-6 pl10">
+                        <label class="">保理商</label>
+                        <span name="brname"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 pl10">
+                        <label class="">融资人统一社会色会信用代码</label>
+                        <span name="idNo"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="rongzicontent item-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="col-sm-5">业务类型</label>
+                        <div class="col-sm-7"><span dic-type="200" name='finTyp'></span></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-12">融资金额(元)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">融资利率</label>
+                        <div data-type="rate" name="intRate" class="col-sm-5 big"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <div class="col-sm-7">
+                           <span style="padding-left: 15px;" class="zrCredentWord" data-type="currency-S" name="disctAmt"></span>
+                       </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">融资期限(天)</label>
+                        <div name="intDays" class="col-sm-5"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <div class="col-sm-7">
+                           <span class="zrCredentWord" style="padding-left: 15px;" data-type="currency-C" name="disctAmtCh"></span>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rongzicontent item-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">融资利息(元)</label>
+                        <div name="dcInterest" data-type="currency" class="col-sm-7 bold"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">利息、费用结算方式</label>
+                        <div class="col-sm-7">无信息</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">优惠券(元)</label>
+                        <div data-type="currency" name="useBouns" class="col-sm-7 bold"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">实际发放日</label>
+                        <div data-type="date" name="payDt" class="col-sm-7"></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">实收融资利息(元)</label>
+                        <div  data-type="currency" name="rcInterest" class="col-sm-7 bold"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">实付金额(元)</label>
+                        <div data-type="currency-S" name="payAmt" class="col-sm-7 bold"></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">手续费(元)</label>
+                        <div data-type="currency" name="txnFee" class="col-sm-7"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <label class="col-sm-5"></label>
+                        <div data-type="currency-C" name="payAmtCh" class="col-sm-7 bold"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="rongzicontent item-content row" style="border: none;">
+                <div class="row">
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">宝券编号</label>
+                        <div name="srcDrftNo" class="col-sm-7 bold"></div>
+                    </div>
+                    <div class="col-sm-6">
+                       <label class="col-sm-5">开券人</label>
+                        <div name="drwrNm" class="col-sm-7"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="col-sm-5">宝券开具日</label>
+                        <div data-type="date" name="isseDt" class="col-sm-7"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-5">宝券金额(元)</label>
+                        <div data-type="currency-S" name="validAmt" class="col-sm-7 bold"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="col-sm-5">宝券到期日</label>
+                        <div data-type="date" name="dueDt" class="col-sm-7"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-5">&nbsp;</label>
+                        <div data-type="currency-C" name="validAmtCh" class="col-sm-7 bold"></div><em class="zhang"></em>
+                    </div>
+                </div>
+            </div>
+            <p class="tip">
+                <i>*</i>保理商已与融资人签署《晨蜂金融平台宝券商业保理融资协议》，同意在融资金额中扣除实收融资利息及手续费后，将实付金额支付至融资人的用户结算账户。
+            </p>
+        </div>
+
+
+        <div class="goUp">
+            <a class="btn" href="javascript:void(0);">返回上级页面</a>
+        </div>
+    </div>
+</div>

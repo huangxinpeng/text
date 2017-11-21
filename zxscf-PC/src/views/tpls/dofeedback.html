@@ -1,0 +1,58 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/feedback.png" alt="">
+        <div class="col-sm-3">
+            <span class="spanTitle grxx">我要反馈</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span id="wtfk" class="bzfk">问题反馈</span>
+    </div>
+    <div class="contentMain bgcolor">
+        <div id="fknormal">
+            <textarea id="helpC" type="text" placeholder="请输入您的建议与反馈......"></textarea>
+            <span class="fontTip">400字以内</span>
+            <button id="submit" class="btn btn-primary">提交</button>
+        </div>
+        <div id="fkerror" style="display: none;">
+            <img class="fkimg" src="../images/index/error.png">
+            <span class="fktip">提交失败</span>
+        </div>
+        <div id="fksuccess" style="display: none;">
+            <img class="fkimg" src="../images/index/chenggong.png">
+            <span class="fktip">提交成功</span>
+        </div>
+    </div>
+</div>
+
+<div class="contentDetail">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span class="bzfk">反馈历史</span>
+    </div>
+    <div class="contentMain bgcolor" id="feedbackList">
+    </div>
+    <div id="noDataTip">无可用数据!</div>
+    <div id="page">
+        <ul>
+            <li><button id="firstPage">首页</button></li>
+            <li><button id="prePage">上一页</button></li>
+            <li><span id="pageInfo"><span id="pageIndex">1</span>页/<span id="totalPage"></span>页</span>
+            </li>
+            <li><button id="nextPage">下一页</button></li>
+            <li><button id="lastPage">尾页</button></li>
+        </ul>
+        <span id="eachPage">每页显示条数
+                <select id="pageSize">
+                    <option value=2 selected>10</option>
+                    <option value=3>15</option>
+                    <option value=4>20</option>
+                    <option value=5>25</option>
+                </select>
+</div>

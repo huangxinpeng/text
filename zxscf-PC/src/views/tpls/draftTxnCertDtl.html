@@ -1,0 +1,100 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <img class="col-sm-1" src="../images/index/chaxun_pingdao.png" alt="">
+        <div class="col-sm-11" id="title">
+            <span class="spanTitle">我的宝券&gt;宝券查询&gt;宝券信息&gt;<a href="javascript:;" alt="">宝券转让凭证</a></span>
+            <span class="spanNote">您在此页面可查看企业持有宝券详细信息</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div id="main" class="contentDetailNew">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <div class="drftDetail">
+            <label>凭证编号</label>
+            <span name="srcDrftNo" id="bqbh"></span>
+            <span class="" id="qsrq1"><i class="icon iconfont icon-xiazai"></i>下载转让凭证</span>
+        </div>
+    </div>
+
+    <div class="contentMain transferCertificate">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label class="control-label item-title">转让人名称</label>
+                <span class="item-content" name="reqCustName"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="control-label item-title">受让人名称</label>
+                <span class="item-content" name="rcvCustName"></span>
+            </div>
+        </div>
+        <div class="form-group row with-bottom-line">
+            <div class="col-sm-6">
+                <label class="control-label item-title">转让人统一社会信用代码</label>
+                <span class="item-content" name="reqIdNo"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="control-label item-title">受让统一社会信用代码</label>
+                <span class="item-content" name="rcvIdNo" id="danbaofang01"></span>
+            </div>
+        </div>
+        <div class="form-group row with-top-line">
+            <div class="col-sm-6">
+                <label class="control-label item-title">宝券编号&nbsp;&nbsp;&nbsp;</label>
+                <span class="item-content" name="srcDrftNo" style="font-weight:bold;"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="control-label item-title">宝券金额(元)</label>
+                <span class="item-content" data-type="currency"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label class="control-label item-title">开券人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <span class="item-content" name="drwrNm"></span>
+            </div>
+            <div class="col-sm-6">
+                <span class="control-label item-title zrCredentWord" data-type="currency-S" name="txnAmt"></span>
+            </div>
+        </div>
+        <div class="form-group row ">
+            <div class="col-sm-6">
+                <label class="control-label item-title">宝券开具日</label>
+                <span class="item-content" name="isseDt" data-type="date"></span>
+            </div>
+            <div class="col-sm-6">
+                <span class="control-label item-title zrCredentWord" name="txnAmtCh" data-type="currency-C"></span>
+                <em></em>
+
+            </div>
+        </div>
+        <div class="form-group row ">
+            <div class="col-sm-6">
+                <label class="control-label item-title">宝券到期日</label>
+                <span class="item-content" name="dueDt" data-type="date"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="control-label item-title"></label>
+                <span class="item-content"></span>
+            </div>
+        </div>
+        <div class="form-group row ">
+            <div class="col-sm-6">
+                <label class="control-label item-title">宝券转让日</label>
+                <span class="item-content" name="txnDt" data-type="date"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="control-label item-title"></label>
+                <span class="item-content"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="btn" class="row">
+    <div class="col-sm-12" style="text-align:center;">
+        <button id="returnPre" class="return btn" style="width:150px;">返回上级页面</button>
+    </div>
+</div>

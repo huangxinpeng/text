@@ -1,0 +1,122 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-ic_alarm_black_px"></i>
+        </div>
+        <div class="col-sm-4">
+            <span class="spanTitle">业务台账><a href="javascript:;" alt="">到期付款台账</a></span>
+            <span class="spanNote">您在此页面可查询所有的到期付款台账</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容查询条件等，不是所有页面都有-->
+<form id="fukuanQF" class="contentQuery">
+    <div class="row form-group">
+        <label class="col-sm-1">交易状态</label>
+        <div class="col-sm-5">
+            <select id="txnStat" name="txnStat" class="form-control">
+                <option value="">请选择</option>
+            </select>
+        </div>
+        <label class="col-sm-1">解付金额</label>
+        <div class="col-sm-5">
+            <input name="startAmt" type="text" class="form-control inputShort" placeholder="请输入起始金额">
+            <span>至</span>
+            <input name="endAmt" type="text" class="form-control inputShort" placeholder="请输入终止金额">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-sm-1">申请日期</label>
+        <div class="col-sm-5">
+            <div class="input-group date form-date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" id="sqFrom" value="" placeholder="请输入起始日期" readonly/>
+                <span class="input-group-addon removeSpan"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon dateSpan"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <input name="startTxnDt" type="hidden" id="dtp_input1" value="" />
+            <span class="fromTo">至</span>
+            <div class="input-group date form-date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" id="sqTo" value="" placeholder="请输入终止日期" readonly>
+                <span class="input-group-addon removeSpan"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon dateSpan"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <input name="endTxnDt" type="hidden" id="dtp_input2" value="" />
+        </div>
+        <label class="col-sm-1">放款日期</label>
+        <div class="col-sm-5">
+            <div class="input-group date form-date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" id="fkFrom" value="" placeholder="请输入起始日期" readonly/>
+                <span class="input-group-addon removeSpan"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon dateSpan"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <input type="hidden" name="startDate" id="dtp_input3" value="" />
+            <span class="fromTo">至</span>
+            <div class="input-group date form-date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input4" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" id="fkTo" value="" placeholder="请输入终止日期" readonly>
+                <span class="input-group-addon removeSpan"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon dateSpan"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <input type="hidden" name="endDate" id="dtp_input4" value="" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 query">
+            <button type="button" id="fukuanSrch" class="pre-step btn btn-primary">查询</button>
+        </div>
+    </div>
+</form>
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="contentListTitle">
+        <img src="" alt="">
+        <span>到期付款台账</span>
+    </div>
+    <div class="contentMain standingBook">
+        <table id="daoqiTab" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>申请日期</th>
+                    <th>宝券编号</th>
+                    <th>解付金额</th>
+                    <th>收款行</th>
+                    <th>收款账号</th>
+                    <th>放款日期</th>
+                    <th dic-type="129">交易状态</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <!--<tr>-->
+                <!--<td>申请日期</td>-->
+                <!--<td>K201706220-001</td>-->
+                <!--<td>111,125,420.08</td>-->
+                <!--<td>中国平安保险（集团）股份有限公司</td>-->
+                <!--<td>2017-03-20</td>-->
+                <!--<td>交易状态</td>-->
+                <!--</tr>-->
+            </tbody>
+        </table>
+        <div id="noDataTip">无可用数据!</div>
+        <div id="page">
+            <ul>
+                <li><button id="firstPage">首页</button></li>
+                <li><button id="prePage">上一页</button></li>
+                <li><span id="pageInfo"><span id="pageIndex">1</span>页/<span id="totalPage"></span>页</span>
+                </li>
+                <li><button id="nextPage">下一页</button></li>
+                <li><button id="lastPage">尾页</button></li>
+            </ul>
+            <span id="eachPage">每页显示条数
+                <select id="pageSize">
+                    <option value=2 selected>10</option>
+                    <option value=3>15</option>
+                    <option value=4>20</option>
+                    <option value=5>25</option>
+                </select>
+            </span>
+            <input id="isQuery" type="hidden" value="0">
+        </div>
+    </div>
+</div>

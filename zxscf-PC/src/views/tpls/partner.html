@@ -1,0 +1,104 @@
+<!--主体内容标题导航等-->
+<div class="contentHeader">
+    <div class="row">
+        <div class="col-sm-1 icon-wrap">
+            <i class="icon iconfont icon-gongyingshang" style="font-size:22px;"></i>
+        </div>
+        <div class="col-sm-3">
+            <span class="spanTitle">企业信息><a href="javascript:;" alt="">交易对手</a></span>
+            <span class="spanNote">您可在此页面可查看企业常用交易对手</span>
+        </div>
+    </div>
+</div>
+
+<!--主体内容明细部分-->
+<div class="contentDetail">
+    <div class="infoGroup minSize">
+        <div class="infoGroupTitle">
+            <h4>常用交易对手</h4>
+        </div>
+        <div class="infoGroupContent">
+            <table id="opponentTab" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>客户号</th>
+                        <th>企业名称</th>
+                        <th dic-type="900003">证件类型</th>
+                        <th>证件号码</th>
+                        <th width="120">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <!--<td>01</td>-->
+                        <!--<td>中兴通讯</td>-->
+                        <!--<td>身份证</td>-->
+                        <!--<td>111111</td>-->
+                        <!--<td>-->
+                        <!--&lt;!&ndash;<a class="blue modify" href="#">修改</a>&ndash;&gt;-->
+                        <!--<a class="red delete" href="#">删除</a>-->
+                        <!--</td>-->
+                    </tr>
+                </tbody>
+            </table>
+            <div id="noDataTip">无可用数据!</div>
+            <div id="page">
+                <ul>
+                    <li><button id="firstPage">首页</button></li>
+                    <li><button id="prePage">上一页</button></li>
+                    <li><span id="pageInfo"><span id="pageIndex">1</span>页/<span id="totalPage"></span>页</span>
+                    </li>
+                    <li><button id="nextPage">下一页</button></li>
+                    <li><button id="lastPage">尾页</button></li>
+                </ul>
+                <span id="eachPage">每页显示条数
+                <select id="pageSize">
+                    <option value=2 selected>10</option>
+                    <option value=3>15</option>
+                    <option value=4>20</option>
+                    <option value=5>25</option>
+                </select>
+            </span>
+                <input id="isQuery" type="hidden" value=0>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 add">
+                <button id="add" class="pre-step btn btn-primary">新增</button>
+            </div>
+        </div>
+    </div>
+    <div id="addOpponent" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">新增交易对手</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="opponentForm" action="javascript:void(0);">
+                        <div class="row form-group">
+                            <div class=" col-md-offset-1 col-md-6">
+                                <input name="custName" class="form-control" id="checkCode" type="text" placeholder="请输入企业完整名称" />
+                            </div>
+                            <div class="col-md-3">
+                                <button id="search" class="btn btn-block" type="button">查找</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <ul id="srchResult">
+                        <!-- <li>上海浦东发展银行<span class="radiusAddBtn">+</span></li> -->
+                    </ul>
+                    <div id="emptyPop">
+                        <i></i>抱歉，没有查找到你所输入的企业名称，<a href="javascript: void(0);">通知管理员</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>

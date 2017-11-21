@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" >
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>我的任务</title>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/swiper-3.3.1.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/myTask.css">
+</head>
+<body class="padd_40">
+	<div class="tab">
+		<a data-id="1" class="active" href="javascript:;">签收</a>
+		<a data-id="2" href="javascript:;">转让审核</a>
+		<a data-id="3" href="javascript:;">融资审核</a>
+	</div>
+	<div class="swiper-container">
+		<div class="refreshtip">下拉可以刷新</div>
+		<div class="swiper-wrapper swiperWdt">
+			<div class="swiper-slide d">
+				<div class="init-loading list-group-item text-center" style="display: none;">下拉可以刷新</div>
+				<div class="swiper-container2">
+          <div class="swiper-wrapper">
+            <!-- 我的任务--签收 -->
+           <div class="swiper-slide list-group qs-list" >
+          <!--   <div class="list-group-item ">
+              <span>2017-07-30</span>
+              <p>您收到一笔来自供应商AA的宝券转让</p>
+            </div>
+
+            <div class="list-group-item">
+              <span>2017-07-30</span>
+              <p>您收到一笔来自供应商AA的宝券转让</p>
+            </div> -->
+
+          </div>
+          <!--我的任务-转让审核-->
+          <div class="swiper-slide list-group zrs-list">
+            <!-- <div class="list-group-item">
+              <span class="pull-left transferPendingReview">转让待复核</span>
+              <span class="pull-right" >2017-07-30</span>
+              <p class="flx">您收到一笔来自供应商AA的宝券转让</p>
+            </div>
+            <div class="list-group-item">
+              <span class="pull-left transferToCancel">转让撤销待复核</span>
+              <span class="pull-right" >2017-07-30</span>
+              <p class="flx">您收到一笔来自供应商AA的宝券转让</p>
+            </div> -->
+          </div>
+
+          <!--我的任务-融资审核-->
+          <div class="swiper-slide list-group rzsl-list">
+           <!--  <div class="list-group-item">
+              <span class="pull-left text1094f5">融资待复核</span>
+              <span class="pull-right" >2017-07-30</span>
+              <p class="flx">您收到一笔来自供应商AA的宝券转让</p>
+            </div>
+            <div class="list-group-item">
+              <span class="pull-left textff9f00">融资撤销待复核</span>
+              <span class="pull-right" >2017-07-30</span>
+              <p class="flx">您收到一笔来自供应商AA的宝券转让</p>
+            </div> -->
+          </div>
+
+        </div>
+          <div class="noDataTip">暂时没有最新数据哦!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loadtip">上拉加载更多</div>
+  <div class="swiper-scrollbar"></div>
+</div>
+  <div class="footer">
+    <i>如需处理代办任务，请登录晨蜂金融APP或PC端网站</i><button id="taskBtn">X</button>
+  </div>
+<script type="text/javascript" charset="utf-8" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery.json-2.4.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/ifs/ifs-router-config.js"></script>
+<script src="../js/ifs/ifs-router.js"></script>
+<script src="../js/ifs/ifs-config.js"></script>
+<script src="../js/ifs/ifs-regular.js"></script>
+<script src="../js/ifs/ifs-ajax.js"></script>
+<script src="../js/common.js"></script>
+<!--public-->
+<script src="../js/biz/public.js"></script>
+<script src="../js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../js/biz/myTask.js"></script>
+
+</body>
+</html>

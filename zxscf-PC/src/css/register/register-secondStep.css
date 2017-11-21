@@ -1,0 +1,57 @@
+#commondContent .procedure span:nth-child(2) {
+  width: 46px;
+  height: 46px;
+  background: url('../../images/registerInfo/faren_1.png') no-repeat center;
+  top: 10px;
+}
+#commondContent .procedure span:nth-child(2) > i {
+  left: -30%;
+  bottom: -35px;
+}
+#commondContent #companyBaseInfo {
+  margin: 0 auto;
+  margin-top: 80px;
+}
+#commondContent #companyBaseInfo input {
+  width: 356px;
+}
+#commondContent #companyBaseInfo .selectN {
+  width: 356px;
+}
+#commondContent #companyBaseInfo .uploadImg .yingyezhizhao,
+#commondContent #companyBaseInfo .uploadImg .shehuixinyong {
+  width: 135px;
+  height: 120px;
+}
+#commondContent #companyBaseInfo .uploadImg .yingyezhizhao img {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#commondContent #companyBaseInfo .uploadImg .shehuixinyong {
+  margin-left: 63px;
+}
+#commondContent #companyBaseInfo .uploadImg .shehuixinyong img {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#commondContent #companyBaseInfo .pre-step {
+  color: #000;
+  font-size: 18px;
+  width: 120px;
+  height: 40px;
+  border-color: #778899;
+  background: #fff;
+  margin: 0px 30px 0px 5px;
+}
+#commondContent #companyBaseInfo .next-step {
+  color: #fff;
+  font-size: 18px;
+  width: 120px;
+  height: 40px;
+  border-color: transparent;
+  background: #157df2;
+}

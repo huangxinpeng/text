@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--其他标签必须紧随其后-->
+    <!--调试阶段禁止缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>蜜蜂金融供应链</title>
+    <!--favicon-->
+    <!--<link rel="shortcut icon" href="../images/common/favicon.ico" />-->
+
+    <!--公用部分-->
+    <link href="../css/common/base.css" rel="stylesheet">
+    <!--<link href="../css/common.css" rel="stylesheet">-->
+    <link href="../css/common/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="../fonts/iconfont.css" rel="stylesheet">
+
+    <!--登录页面-->
+    <link href="../css/login/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="../images/login/img/banner.png" alt="">
+            </div>
+            <div class="item">
+                <img src="../images/login/img/banner_1.png" alt="">
+            </div>
+            <div class="item">
+                <img src="../images/login/img/banner_0.png" alt="">
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <span class="jiantou-right" href="#myCarousel" data-slide="prev"></span>
+        <span class="jiantou-left" href="#myCarousel" data-slide="next"></span>
+    </div>
+
+
+    <div class="header">
+        <img src="../images/index/logo_2.png">
+        <span>欢迎使用中兴晨蜂金融平台！</span>
+    </div>
+    <!--注册登录栏-->
+    <div class="loginForm">
+        <div class="title">
+            <hr>
+            <span></span>
+            <span>用户登录</span>
+            <span></span>
+            <hr>
+        </div>
+        <form id="userLogin" action="" onsubmit="return false">
+            <!--用户名-->
+            <div class="form-group">
+                <input id="username" type="text" name="username" placeholder="用户名">
+                <i style="font-size:24px;top:5px;" class="icon iconfont icon-ic_person_black_px"></i>
+                <p class="tip usrTip"></p>
+            </div>
+            <!--密码-->
+            <div class="form-group">
+                <input id="pwd" type="password" name="" placeholder="密码">
+                <i class="icon iconfont icon-mima"></i>
+                <p class="tip pswTip"></p>
+            </div>
+            <!--验证码-->
+            <div class="form-group">
+                <input id="checkNum" type="text" name="" placeholder="验证码">
+                <i class="icon iconfont icon-yanzheng"></i>
+                <a id="changeCheckNum" href="javascript:void(0);">
+                    <img id="imgCode" alt="">
+                </a>
+                <p class="tip checkTip"></p>
+            </div>
+            <p class="SMSCheckTip">密码输错三次，请点击发送短信进行短信验证</p>
+            <div id="SMSGroup" class="form-group">
+                <input style="float: left;" id="checkSms" type="text" name="" placeholder="短信验证码">
+                <i class="icon iconfont icon-yanzheng"></i>
+                <input style="font-size: 12px;" type="button" value="获取验证码" id="sendSms" class="btn" />
+                <p class="tip SMSTip"></p>
+            </div>
+            <p style="display:none;" class="loginCheckTip">账号已被锁定，请重新设定密码</p>
+            <div class="form-group">
+                <button id="login" class="btn">登录</button>
+            </div>
+        </form>
+
+       
+        <a class="fl" href="../views/register/register-firstStep.html?v=APP_VER" id="register">立即注册</a>
+        <a class="fr" href="../views/resetpwd/resetpwd.html?v=APP_VER" id="forgetPwd">忘记密码</a>
+    </div>
+    <div class="footer-nav">
+        <div class="footer-nav-top">
+            <div class="relation-message">
+                <span class="kfrx">客服热线 4000-967585</span>
+                <span class="banquan fr">2015-2018&nbsp;中兴通讯集团财务有限公司&nbsp;版权所有&nbsp;粤ICP备15070759号</span>
+            </div>
+            
+            <ul id="erweima">
+
+                <li>
+                    <img src="../images/login/img/erweima_1.png" alt="">
+                    <a href="javascript:;"><span></span>iOS</a>
+                </li>
+                <li>
+                    <img src="../images/login/img/erweima_2.png" alt="">
+                    <a href="javascript:;"><span></span>安卓</a>
+                </li>
+                <li>
+                    <img src="../images/login/img/erweima_3.png" alt="">
+                    <a href="javascript:;"><span></span>关注微信公众号</a>
+                </li>
+            </ul>
+            <div class="download">
+                <p>扫一扫</p>
+                <p>下载晨蜂金融APP</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<!--base-js-->
+
+<script src="../js/jquery-1.12.4.min.js?v=APP_VER"></script>
+<script src="../js/jquery.json-2.4.js?v=APP_VER"></script>
+<script src="../js/bootstrap.min.js?v=APP_VER"></script>
+<script src="../js/bootstrapValidator.min.js?v=APP_VER"></script>
+
+<!--ifs-js-->
+<script src="../js/global.js?v=APP_VER"></script>
+<script src="../js/ifs/ifs-router-config.js?v=APP_VER"></script>
+<script src="../js/ifs/ifs-router.js?v=APP_VER"></script>
+<script src="../js/ifs/ifs-config.js?v=APP_VER"></script>
+<script src="../js/ifs/ifs-regular.js?v=APP_VER"></script>
+<script src="../js/ifs/ifs-ajax.js?v=APP_VER"></script>
+<script src="../js/common.js?v=APP_VER"></script>
+<script src="../js/MD5.js?v=APP_VER"></script>
+
+<!--biz-js--><script src="../js/biz/login.js?v=APP_VER"></script>
