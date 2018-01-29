@@ -1,103 +1,103 @@
       <!--保理合同签订下载-->
       <template>
-            <div class="ContDownload" >
-                  <div class="" style="margin-bottom:20px;">
-                        <div class="row">
-                              <div class="col-md-10 col-md-offset-1">
-                                    <div class="col-md-12 textHeight">
-                                          <div class="col-md-12">
-                                                <span class="h4">定保理>合同管理</span>
-                                        <router-link class="btn btn-default pull-right margint btn-sm" to='/homepage' >返回</router-link>
-                                          </div>
-                                    </div>
-                                    <div class="col-md-10 col-md-offset-1 borx">
-                                          <form role="form" class="col-md-0">
-                                                <div class="col-md-12 ">
-                                                      <div class="form-group col-md-6 ">
-                                                            <label  class="col-md-4 text-right"><h5>合同金额</h5></label>
-                                                            <div class="col-md-8 input-group">
-                                                                  <input v-model="contract.value.contAmount"
-                                                                    type="text"  class="form-control"  />
-                                                            </div>
-                                                      </div>
-                                                      <div class="form-group col-md-6 ">
-                                                            <label  class="col-md-4 text-right"><h5>合同状态</h5></label>
-                                                            <div class="col-md-8 input-group">
-                                                            <input v-model="contract.value.contStatus"
-                                                              type="text" name=""  class="form-control" />
-                                                            </div>
-                                                      </div>
-                                                </div>
-
-
-                                                <div class="col-md-12 text-center">
-                                                     <button type="submit" class="btn btn-warning btn-sm"
-                                                      @click="search">查询 </button>
-                                                </div>
-                                          </form>
-                                    </div>
-                              </div>
-
-                              <div class="col-md-10  col-md-offset-1">
-                                    <hr class="bgc" />
-                                    <div class="col-md-12">
-                                          <!-- 插件 -->
-                                          <table class="table table-bordered" >
-                                                <thead class="text-center">
-                                                      <tr   class="">
-                                                            <th class="text-center">合同号</th>
-                                                            <th class="text-center"><!-- 合同类型 --></th>
-                                                            <th class="text-center">买方客户</th>
-                                                            <th class="text-center">卖方客户</th>
-                                                            <th class="text-center">合同生效时间</th>
-                                                            <th class="text-center">合同结束时间</th>
-                                                            <th class="text-center">合同金额</th>
-                                                            <th class="text-center">合同状态</th>
-                                                            <!-- <th class="text-center">操作</th> -->
-                                                      </tr>
-                                                </thead>
-                                                <tbody>
-                                                  <tr  class="text-center"
-                                                    v-if="contract.list"
-                                                    v-for="(item, key) in contract.list"
-                                                    :key="key">
-                                                         <td>{{item.mastContno}}</td>
-                                                         <!-- <td>{{item.contType}}</td> -->
-                                                         <td>{{item.cnameBuyer}}</td>
-                                                         <td>{{item.cnameSeller}}</td>
-                                                         <td>{{item.startDate}}</td>
-                                                         <td>{{item.endDate}}</td>
-                                                         <td>{{item.contAmount}}</td>
-                                                         <td>{{item.contStatus}}</td>
-                                                   </tr>
-                                                    <tr v-else class="text-center" >
-                                                          <td colspan="10" rowspan="" headers="">
-                                                                 <h4 class="text-primary">暂无数据...</h4>
-                                                          </td>
-                                                    </tr>
-                                                </tbody>
-                                          </table>
-                                          <!-- 插件 -->
-                                          <pagination :data.sync="contract.list"
-                                            :total="contract.total"
-                                            :url="url.generalQry.contract"
-                                            :value="contract.value"
-                                            table="contract"
-                                            k="contList"
-                                            />
-                                    </div>
-                              </div>
-                        </div>
-
+        <div class="ContDownload" >
+          <div class="" style="margin-bottom:20px;">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12 textHeight">
+                  <div class="col-md-12">
+                    <span class="h4">定保理>合同管理</span>
+                    <router-link class="btn btn-default pull-right margint btn-sm" to='/homepage' >返回</router-link>
                   </div>
-            </div>
-      </template>
-      <script>
-import footder from "../../components/footder.vue";
-import headers from "../../components/header.vue";
-import pagination from '@/components/global/pagination'
-import url from '@/http/url'
-export default {
+                </div>
+                <div class="col-md-10 col-md-offset-1 borx">
+                  <form role="form" class="col-md-0">
+                    <div class="col-md-12 ">
+                      <div class="form-group col-md-6 ">
+                        <label  class="col-md-4 text-right"><h5>合同金额</h5></label>
+                        <div class="col-md-8 input-group">
+                          <input v-model="contract.value.contAmount"
+                          type="text"  class="form-control"  />
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 ">
+                        <label  class="col-md-4 text-right"><h5>合同状态</h5></label>
+                        <div class="col-md-8 input-group">
+                          <input v-model="contract.value.contStatus"
+                          type="text" name=""  class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-12 text-center">
+                     <button type="submit" class="btn btn-warning btn-sm"
+                     @click="search">查询 </button>
+                   </div>
+                 </form>
+               </div>
+             </div>
+
+             <div class="col-md-10  col-md-offset-1">
+              <hr class="bgc" />
+              <div class="col-md-12">
+                <!-- 插件 -->
+                <table class="table table-bordered" >
+                  <thead class="text-center">
+                    <tr   class="">
+                      <th class="text-center">合同号</th>
+                      <th class="text-center"><!-- 合同类型 --></th>
+                      <th class="text-center">买方客户</th>
+                      <th class="text-center">卖方客户</th>
+                      <th class="text-center">合同生效时间</th>
+                      <th class="text-center">合同结束时间</th>
+                      <th class="text-center">合同金额</th>
+                      <th class="text-center">合同状态</th>
+                      <!-- <th class="text-center">操作</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr  class="text-center"
+                    v-if="contract.list"
+                    v-for="(item, key) in contract.list"
+                    :key="key">
+                    <td>{{item.mastContno}}</td>
+                    <!-- <td>{{item.contType}}</td> -->
+                    <td>{{item.cnameBuyer}}</td>
+                    <td>{{item.cnameSeller}}</td>
+                    <td>{{item.startDate}}</td>
+                    <td>{{item.endDate}}</td>
+                    <td>{{item.contAmount}}</td>
+                    <td>{{item.contStatus}}</td>
+                  </tr>
+                  <tr v-else class="text-center" >
+                    <td colspan="10" rowspan="" headers="">
+                     <h4 class="text-primary">暂无数据...</h4>
+                   </td>
+                 </tr>
+               </tbody>
+             </table>
+             <!-- 插件 -->
+             <pagination :data.sync="contract.list"
+             :total="contract.total"
+             :url="url.generalQry.contract"
+             :value="contract.value"
+             table="contract"
+             k="contList"
+             />
+           </div>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </template>
+ <script>
+ import footder from "../../components/footder.vue";
+ import headers from "../../components/header.vue";
+ import pagination from '@/components/global/pagination'
+ import url from '@/http/url'
+ export default {
   name: "ContDownload",
   components: {
     footder,
@@ -132,7 +132,7 @@ export default {
   }
 };
 </script>
-      <style scoped>
+<style scoped>
 .ContDownload {
   width: 100;
   overflow: hidden;
