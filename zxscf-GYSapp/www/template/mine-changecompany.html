@@ -1,8 +1,0 @@
-<ion-view view-title="切换企业">
-  <ion-content>
-    <div class="current-company">当前企业 : <span>{{choice}}</span></div>
-    <ion-list class="self-radio">
-      <ion-radio ng-repeat="MineChangeCompany in MineChangeCompanys" ng-model="choice" ng-value="MineChangeCompany.custCnNm" on-tap="radioChange($index,MineChangeCompany.custNo)">{{MineChangeCompany.custCnNm}}</ion-radio>
-    </ion-list>
-  </ion-content>
-</ion-view>
